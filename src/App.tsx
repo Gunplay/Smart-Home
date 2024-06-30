@@ -1,5 +1,5 @@
 import Router from './components/Router/Router';
-import { AboutUs, Home, Register, SignIn } from './pages/index';
+import { AboutUs, Home, Register, SignIn, AppCart } from './pages/index';
 
 function App() {
 	return (
@@ -10,6 +10,7 @@ function App() {
 					{ path: '/about', component: AboutUs },
 					{ path: '/sign-in', component: SignIn },
 					{ path: '/register', component: Register },
+					{ path: '/cart', component: AppCart },
 				]}
 			/>
 		</>
