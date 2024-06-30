@@ -35,7 +35,6 @@ const Carousel = () => {
 	};
 
 	const goToSlide = (slideIndex: SetStateAction<number>) => {
-		console.log(slideIndex);
 		setCurrentIndex(slideIndex);
 	};
 
@@ -45,6 +44,7 @@ const Carousel = () => {
 				style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
 				className='w-full h-full bg-center bg-cover duration-500 relative'
 			>
+				{/* Dots */}
 				<div className='absolute bottom-4 left-0 right-0 flex justify-center py-2'>
 					{slides.map((_, slideIndex) => (
 						<div
@@ -57,9 +57,11 @@ const Carousel = () => {
 					))}
 				</div>
 			</div>
+			{/* Left Arrow */}
 			<div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
 				<BsChevronCompactLeft size={30} onClick={prevSlide} />
 			</div>
+			{/* Right Arrow */}
 			<div className='hidden group-hover:block absolute top-[50%] translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
 				<BsChevronCompactRight size={30} onClick={nextSlide} />
 			</div>

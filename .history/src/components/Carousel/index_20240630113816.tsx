@@ -3,7 +3,6 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import slideOne from '/src/assets/slider-1.jpg';
 import slideTwo from '/src/assets/slider-2.jpg';
 import slideThree from '/src/assets/slider-3.jpg';
-
 const slides = [
 	{
 		url: slideOne,
@@ -18,7 +17,6 @@ const slides = [
 		id: 2,
 	},
 ];
-
 const Carousel = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -38,7 +36,6 @@ const Carousel = () => {
 		console.log(slideIndex);
 		setCurrentIndex(slideIndex);
 	};
-
 	return (
 		<div className='h-[780px] w-full m-auto py-2 relative group'>
 			<div
@@ -46,7 +43,7 @@ const Carousel = () => {
 				className='w-full h-full bg-center bg-cover duration-500 relative'
 			>
 				<div className='absolute bottom-4 left-0 right-0 flex justify-center py-2'>
-					{slides.map((_, slideIndex) => (
+					{slides.map((slide, slideIndex) => (
 						<div
 							key={slideIndex}
 							className={`w-16 h-1 cursor-pointer ${
