@@ -1,0 +1,32 @@
+[33mcommit 2af20c3e8aacb7187402693d19f1f496d255214e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 8e97eb5 6b9302a
+Author: Vova Yankers <vovarojko@gmail.com>
+Date:   Mon Jul 1 21:08:46 2024 +0300
+
+    Merge pull request #1 from fedinchuk/сart
+    
+    add cart
+
+[33mcommit 6b9302af0a48c68e78c843b4cc610b39cd3f4276[m
+Author: Vasyl <vasyl.fedinchuk@gmail.com>
+Date:   Mon Jul 1 01:36:29 2024 +0200
+
+    add cart
+
+[33mcommit 8e97eb59bd3a16c7b48d2ba60a1ba64c9571edc4[m
+Author: Vova Yankers <vovarojko@gmail.com>
+Date:   Sun Jun 30 11:48:58 2024 +0300
+
+    update
+
+[33mcommit db3c56f8f9a5258dce464eacaa1636edfea96845[m
+Author: Vova Yankers <vovarojko@gmail.com>
+Date:   Sun Jun 30 11:35:08 2024 +0300
+
+    create repo Smart-Home new
+
+[33mcommit 61d64b0ce2c1536cd33c7ebe10b3f378b5c8450c[m
+Author: Vova Yankers <vovarojko@gmail.com>
+Date:   Sun Jun 30 11:27:39 2024 +0300
+
+    create repo Smart-Home

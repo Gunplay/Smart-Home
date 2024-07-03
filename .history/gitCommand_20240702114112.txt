@@ -1,0 +1,11 @@
+ git branch bug1
+ git checkout bug1
+git branch
+
+git add .
+git commit
+git checkout main
+
+git log
+git reset --hard 6b9302af0a48c68e78c843b4cc610b39cd3f4276
+git push --force
