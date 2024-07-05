@@ -1,0 +1,31 @@
+.content {
+  display: none;
+}
+
+.activeContent {
+  display: block;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.grid1 {
+  grid-area: 1 / 1 / 2 / 6;
+}
+.grid2 {
+  grid-area: 2 / 1 / 6 / 2;
+}
+.grid3 {
+  grid-area: 2 / 2 / 5 / 3;
+}
+.grid4 {
+  grid-area: 2 / 3 / 5 / 4;
+}
+.grid5 {
+  grid-area: 2 / 4 / 5 / 5;
+}
