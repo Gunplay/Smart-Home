@@ -1,6 +1,7 @@
 // import AboutUs from '../components/AboutUs';
 import AboutUs from '../components/AboutUs';
 import Carousel from '../components/Carousel';
+import AppCart from '../components/Cart';
 
 import Header from '../components/Header';
 import ProductsList from '../components/ProductsList';
@@ -15,6 +16,7 @@ function Home() {
       <RecommendProducts />
       <ProductsList />
       <AboutUs />
+      <AppCart />
     </>
   );
 }
