@@ -5,9 +5,9 @@ import App from './App.tsx';
 import './css/style.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<Router>
-			<App />
-		</Router>
-	</React.StrictMode>
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>
 );

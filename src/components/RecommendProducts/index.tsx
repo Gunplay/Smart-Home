@@ -13,6 +13,7 @@ interface Product {
 }
 
 const categories: Record<string, Category[]> = {
+	
 	'Флагманські продукти': [
 		{
 			name: 'Серія Xiaomi 14',
