@@ -49,11 +49,11 @@ const AppCart: React.FC = () => {
   };
 
   return (
-    <div style={{ fontFamily: 'sans-serif', textAlign: 'center' }}>
-      <h1>Shopping Cart</h1>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <div className="font-sans text-center p-4">
+      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
+      <div className="flex justify-around">
         <div>
-          <h2>Products</h2>
+          <h2 className="text-2xl font-bold mb-4">Products</h2>
           {products.map((product) => (
             <Product key={product.id} product={product} addToCart={addToCart} />
           ))}
