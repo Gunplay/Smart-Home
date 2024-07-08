@@ -1,0 +1,61 @@
+/* src/components/NavigationBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d0e4ed;
+  /* Light blue background color */
+  padding: 10px 40px;
+  width: 1280px;
+  height: 80px;
+  margin: auto;
+  /* border-radius: 10px; */
+}
+
+.navbar-logo {
+  font-family: "Jura", sans-serif;
+  color: #393939;
+  vertical-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 80px;
+  height: 40px;
+  background: #e6f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #d19087;
+  /* Light brown color */
+  font-size: 18px;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.auth-button {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-button::before {
+  content: '👤';
+  /* User icon */
+}
