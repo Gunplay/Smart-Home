@@ -1,5 +1,5 @@
-
 //  Possible get from BackEnd
+// import css from './ReccomendProductsTabs.module.css';
 
 import RecommendProductsTabs from './ReccomendProductsTabs';
 
@@ -14,18 +14,7 @@ const RecommendProducts = () => {
   return (
     <div>
       <h2>Рекомендовані продукти</h2>
-      {/* <ul>
-        {categoryProducts.map((category, index) => (
-          <li key={index}>
-            <a href="#">{category}</a>
-          </li>
-        ))}
-      </ul> */}
-      <RecommendProductsTabs/>
-
-      <div >
-
-      </div>
+      <RecommendProductsTabs />
     </div>
   );
 };

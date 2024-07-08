@@ -106,26 +106,29 @@ const RecommendProductsTabs = () => {
   return (
     <div className="container">
       <div className="bloc-tabs">
-        <div
+        <button
+          type='button'
           className={activeTab === Tab.FLAGMAN ? 'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(Tab.FLAGMAN)}
         >
           Флагманські продукти
-        </div>
-        <div
+        </button>
+        <button
+          type='button'
           className={
             activeTab === Tab.SMARTPHONES ? 'tabs active-tabs' : 'tabs'
           }
           onClick={() => toggleTab(Tab.SMARTPHONES)}
         >
           Трендові смартфони
-        </div>
-        <div
+        </button>
+        <button 
+          type='button'
           className={activeTab === Tab.GADGETS ? 'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(Tab.GADGETS)}
         >
           Трендові гаджети
-        </div>
+        </button>
       </div>
       <div
         className={activeTab === Tab.FLAGMAN ? css.activeContent : css.content}
