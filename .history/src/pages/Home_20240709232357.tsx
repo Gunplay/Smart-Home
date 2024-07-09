@@ -12,8 +12,8 @@ import RecommendProducts from '../components/RecommendProducts/RecommendProducts
 function Home() {
   return (
     <>
-      <NavigationBar />
-      {/* <Header /> */}
+      {/* <NavigationBar /> */}
+      <Header />
       <Carousel />
       <RecommendProducts />
       <ProductsList />

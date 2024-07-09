@@ -948,6 +948,10 @@ video {
   height: 100%;
 }
 
+.h-\[580px\] {
+  height: 580px;
+}
+
 .min-h-full {
   min-height: 100%;
 }

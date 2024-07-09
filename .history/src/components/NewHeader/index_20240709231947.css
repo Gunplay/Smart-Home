@@ -6,14 +6,14 @@
   background-color: #d0e4ed;
   /* Light blue background color */
   padding: 10px 40px;
-  width: auto;
+  width: 1280px;
   height: 80px;
-  /* margin: auto; */
+  margin: auto;
   /* border-radius: 10px; */
 }
 
 .navbar-logo {
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
   color: #393939;
   vertical-align: center;
   font-size: 16px;
