@@ -12,3 +12,14 @@ git pull
 git log
 git reset --hard 6b9302af0a48c68e78c843b4cc610b39cd3f4276
 git push --force
+
+
+changes
+
+1 git checkout -b blackbutton
+2 git add. 
+3 git status
+4 git commit -m "blackbutton"
+5 git status
+6 git push origin blackbutton
+
