@@ -12,19 +12,21 @@ const RegisterForm = () => {
     newsletter: false,
   });
 
-  const handleChange = e => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
-  };
+  // const handleChange = (e: {
+  //   target: { name: any; value: any; type: any; checked: any };
+  // }) => {
+  //   const { name, value, type, checked } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: type === 'checkbox' ? checked : value,
+  //   });
+  // };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   // Handle form submission logic here
+  //   console.log(formData);
+  // };
 
   return (
     <div className={styles.formContainer}>
