@@ -1,14 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    clientURI: '',
     newsletter: false,
   });
 
@@ -31,36 +27,6 @@ const RegisterForm = () => {
       <div className={styles.formWrapper}>
         <h2 className={styles.formTitle}>Реєстрація</h2>
         <form onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label htmlFor="firstName" className={styles.formLabel}>
-              Ім'я
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Ім'я"
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="lastName" className={styles.formLabel}>
-              Прізвище
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Прізвище"
-              required
-            />
-          </div>
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.formLabel}>
               Електронна пошта
@@ -92,35 +58,6 @@ const RegisterForm = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="confirmPassword" className={styles.formLabel}>
-              Підтвердіть пароль
-            </label>
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Підтвердіть пароль"
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="clientURI" className={styles.formLabel}>
-              Client URI
-            </label>
-            <input
-              type="text"
-              name="clientURI"
-              id="clientURI"
-              value={formData.clientURI}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Client URI"
-            />
-          </div>
-          <div className={styles.formGroup}>
             <label className={styles.formCheckboxLabel}>
               <input
                 type="checkbox"
@@ -135,11 +72,9 @@ const RegisterForm = () => {
               </span>
             </label>
           </div>
-          <div className={styles.submitButtonContainer}>
-            <button type="submit" className={styles.submitButton}>
-              Зареєструватися
-            </button>
-          </div>
+          <button type="submit" className={styles.submitButton}>
+            Зареєструватися
+          </button>
         </form>
         <p className={styles.formFooter}>
           Реєструючись, ви погоджуєтесь з ліцензійною угодою

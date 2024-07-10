@@ -1,0 +1,78 @@
+.formContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #508bc6;
+}
+
+.formWrapper {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 28rem;
+  width: 100%;
+  margin: 20px;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formLabel {
+  display: block;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.formInput:hover {
+  background-color: #e6f0f0;
+}
+
+.formCheckboxLabel {
+  display: inline-flex;
+  align-items: center;
+}
+
+.formCheckbox {
+  margin-right: 0.5rem;
+  accent-color: #22c55e;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #22c55e;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #16a34a;
+}
+
+.formFooter {
+  text-align: center;
+  color: #718096;
+  margin-top: 1.5rem;
+}

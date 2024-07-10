@@ -1,7 +1,7 @@
 // src/components/NavigationBar.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 const NavigationBar: React.FC = () => {
   return (
@@ -15,10 +15,12 @@ const NavigationBar: React.FC = () => {
         <a href="#">Блог</a>
       </div>
       <div className="navbar-auth">
+        <Link to={''}>
+        
         <button className="auth-button">
-          <Link to={'/sign-in'}>Увійти</Link>/
-          <Link to={'/register'}>зареєструватися</Link>
+          Увійти/зареєструватися
         </button>
+        </Link>
       </div>
     </div>
   );

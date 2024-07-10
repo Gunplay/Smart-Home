@@ -16,8 +16,8 @@ const NavigationBar: React.FC = () => {
       </div>
       <div className="navbar-auth">
         <button className="auth-button">
-          <Link to={'/sign-in'}>Увійти</Link>/
-          <Link to={'/register'}>зареєструватися</Link>
+          <Link to={'register'}>Увійти/</Link>
+          <Link to={''}>зареєструватися</Link>
         </button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
@@ -135,11 +135,9 @@ const RegisterForm = () => {
               </span>
             </label>
           </div>
-          <div className={styles.submitButtonContainer}>
-            <button type="submit" className={styles.submitButton}>
-              Зареєструватися
-            </button>
-          </div>
+          <button type="submit" className={styles.submitButton}>
+            Зареєструватися
+          </button>
         </form>
         <p className={styles.formFooter}>
           Реєструючись, ви погоджуєтесь з ліцензійною угодою
