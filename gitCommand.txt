@@ -16,4 +16,10 @@ git push --force
 
 changes
 
-1 git checkout -b blackbutton   
+1 git checkout -b blackbutton
+2 git add. 
+3 git status
+4 git commit -m "blackbutton"
+5 git status
+6 git push origin blackbutton
+
