@@ -23,3 +23,6 @@ changes
 5 git status
 6 git push origin blackbutton
 
+works with git
+
+7 git pull origin main

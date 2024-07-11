@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <NavigationBar />
-      {/* <Header /> */}
+
       <Carousel />
       <RecommendProducts />
       <ProductsList />
