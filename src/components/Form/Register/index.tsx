@@ -12,7 +12,9 @@ const RegisterForm = () => {
     newsletter: false,
   });
 
-  const handleChange = e => {
+  const handleChange = (e: {
+    target: { name: string; value: string; type: string; checked: boolean };
+  }) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
@@ -20,7 +22,7 @@ const RegisterForm = () => {
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Handle form submission logic here
     console.log(formData);
