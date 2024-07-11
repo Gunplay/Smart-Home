@@ -35,12 +35,12 @@ const RegisterForm = () => {
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="firstName" className={styles.formLabel}>
-              Ім'я
+              Ім'я та призвіще
             </label>
             <input
               type="text"
-              name="firstName"
-              id="firstName"
+              name="firstNameAndSurname"
+              id="firstNameAndSurname"
               value={formData.firstName}
               onChange={handleChange}
               className={styles.formInput}
@@ -48,7 +48,7 @@ const RegisterForm = () => {
               required
             />
           </div>
-          <div className={styles.formGroup}>
+          {/* <div className={styles.formGroup}>
             <label htmlFor="lastName" className={styles.formLabel}>
               Прізвище
             </label>
@@ -62,7 +62,7 @@ const RegisterForm = () => {
               placeholder="Прізвище"
               required
             />
-          </div>
+          </div> */}
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.formLabel}>
               Електронна пошта
@@ -93,7 +93,7 @@ const RegisterForm = () => {
               required
             />
           </div>
-          <div className={styles.formGroup}>
+          {/* <div className={styles.formGroup}>
             <label htmlFor="confirmPassword" className={styles.formLabel}>
               Підтвердіть пароль
             </label>
@@ -107,8 +107,8 @@ const RegisterForm = () => {
               placeholder="Підтвердіть пароль"
               required
             />
-          </div>
-          <div className={styles.formGroup}>
+          </div> */}
+          {/* <div className={styles.formGroup}>
             <label htmlFor="clientURI" className={styles.formLabel}>
               Client URI
             </label>
@@ -121,7 +121,7 @@ const RegisterForm = () => {
               className={styles.formInput}
               placeholder="Client URI"
             />
-          </div>
+          </div> */}
           <div className={styles.formGroup}>
             <label className={styles.formCheckboxLabel}>
               <input

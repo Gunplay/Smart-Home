@@ -12,7 +12,6 @@ function Home() {
   return (
     <>
       <NavigationBar />
-
       <Carousel />
       <RecommendProducts />
       <ProductsList />
