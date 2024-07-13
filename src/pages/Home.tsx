@@ -2,6 +2,7 @@
 import AboutUs from '../components/AboutUs';
 import Carousel from '../components/Carousel';
 import AppCart from '../components/Cart';
+import Menu from '../components/Menu/menu';
 
 import NavigationBar from '../components/NewHeader';
 import ProductsList from '../components/ProductsList';
@@ -12,6 +13,7 @@ function Home() {
   return (
     <>
       <NavigationBar />
+      <Menu />
       <Carousel />
       <RecommendProducts />
       <ProductsList />
