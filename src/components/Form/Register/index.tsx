@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ExitIconForm from '../ExitIconForm';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
@@ -31,6 +32,9 @@ const RegisterForm = () => {
   return (
     <div className={styles.formContainer}>
       <div className={styles.formWrapper}>
+        <div className={styles.formExit}>
+          <ExitIconForm />
+        </div>
         <h2 className={styles.formTitle}>Реєстрація</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
@@ -48,21 +52,7 @@ const RegisterForm = () => {
               required
             />
           </div>
-          {/* <div className={styles.formGroup}>
-            <label htmlFor="lastName" className={styles.formLabel}>
-              Прізвище
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Прізвище"
-              required
-            />
-          </div> */}
+
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.formLabel}>
               Електронна пошта
@@ -93,35 +83,7 @@ const RegisterForm = () => {
               required
             />
           </div>
-          {/* <div className={styles.formGroup}>
-            <label htmlFor="confirmPassword" className={styles.formLabel}>
-              Підтвердіть пароль
-            </label>
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Підтвердіть пароль"
-              required
-            />
-          </div> */}
-          {/* <div className={styles.formGroup}>
-            <label htmlFor="clientURI" className={styles.formLabel}>
-              Client URI
-            </label>
-            <input
-              type="text"
-              name="clientURI"
-              id="clientURI"
-              value={formData.clientURI}
-              onChange={handleChange}
-              className={styles.formInput}
-              placeholder="Client URI"
-            />
-          </div> */}
+
           <div className={styles.formGroup}>
             <label className={styles.formCheckboxLabel}>
               <input

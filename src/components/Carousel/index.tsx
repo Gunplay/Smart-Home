@@ -41,16 +41,16 @@ const Carousel = () => {
   };
 
   return (
-    <div className="h-[580px] w-full m-auto relative group">
+    <div className="h-[350px] w-[1200px] m-auto relative group mt-10 mb-4">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full bg-center bg-cover duration-500 relative"
+        className="w-full h-full bg-center bg-cover duration-500 relative rounded-md"
       >
         <div className="absolute bottom-4 left-0 right-0 flex justify-center py-2">
           {slides.map((_, slideIndex) => (
             <div
               key={slideIndex}
-              className={`w-16 h-1 cursor-pointer ${
+              className={`w-20 h-2 cursor-pointer mr-2.5 rounded-lg ${
                 currentIndex === slideIndex ? 'bg-white' : 'bg-gray-400'
               }`}
               onClick={() => goToSlide(slideIndex)}
