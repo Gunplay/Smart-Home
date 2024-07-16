@@ -1,14 +1,15 @@
 /* src/components/NavigationBar.css */
 .navbar {
+  width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #a9e4ff;
   /* Light blue background color */
   padding: 10px 40px;
-  width: auto;
+  /* width: auto; */
   height: 80px;
-  /* margin: auto; */
+  margin: auto;
   /* border-radius: 10px; */
 }
 
