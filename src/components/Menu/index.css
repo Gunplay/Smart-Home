@@ -1,6 +1,5 @@
-/* App.css */
 .box {
-  width: 1280px;
+  width: auto;
   margin: auto;
 }
 
@@ -15,7 +14,7 @@
   padding: 0;
 }
 
-.menu>ul>li {
+.menu > ul > li {
   margin: 10px 0;
 }
 

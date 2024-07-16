@@ -1,6 +1,6 @@
 /* src/components/NavigationBar.css */
 .navbar {
-  width: 1280px;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
