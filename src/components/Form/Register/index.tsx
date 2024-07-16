@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import exitIcon from '../../../assets/icons/tabler-icon-x.svg';
-
-import Button from '../../Button';
 import styles from './RegisterForm.module.scss';
+
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -34,11 +31,6 @@ const RegisterForm = () => {
   return (
     <div className={styles.formContainer}>
       <div className={styles.formWrapper}>
-        <div className={styles.formExit}>
-          <Link to="/">
-            <img src={exitIcon}></img>
-          </Link>
-        </div>
         <h2 className={styles.formTitle}>Реєстрація</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
@@ -146,9 +138,9 @@ const RegisterForm = () => {
             </label>
           </div>
           <div className={styles.submitButtonContainer}>
-            <Link to="/register">
-              <Button className={styles.submitButton}>Зареєструватися</Button>
-            </Link>
+            <button type="submit" className={styles.submitButton}>
+              Зареєструватися
+            </button>
           </div>
         </form>
         <p className={styles.formFooter}>
