@@ -1,7 +1,3 @@
-// src/components/Form/SignIn/SignInForm.module.scss
-
-@use '../../../css/functions' as *;
-
 .formContainer {
   min-height: 100vh;
   display: flex;
@@ -12,94 +8,23 @@
 
 .formWrapper {
   background-color: white;
-  padding: rem(26) rem(26) rem(26);
-  border-radius: rem(16); // 1rem
+  padding: 5rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: rem(512); // 32rem
+  max-width: 42rem;
   width: 100%;
-  margin: rem(20); // 20px
+  margin: 20px;
 }
-
-.formExit {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
 .formTitle {
-  font-size: rem(24); // 1.5rem
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: rem(24); // 1.5rem
+  margin-bottom: 1.5rem;
 }
-
 .formGroup {
-  margin-bottom: rem(16); // 1rem
+  margin-bottom: 1rem;
 }
-
 .formInput {
   width: 100%;
-  height: rem(64); // 4rem
-  padding: rem(12); // 0.75rem
-  background-color: #e6f0f0;
-  border: 1px solid #e2e8f0;
-  border-radius: rem(16); // 1rem
-  outline: none;
-  transition: background-color 0.3s;
+  height: 4rem;
 }
-
-.formText {
-  margin: rem(40) rem(40); // 2.5rem
-  text-align: center;
-  font-size: rem(16); // 1rem
-}
-
-.buttonRegContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: rem(40);
-}
-
-.buttonRegisterPhone {
-  background-color: #afc1e7;
-  color: black;
-  padding: rem(12) rem(32); // 0.75rem 2rem
-  border-radius: rem(12); // 0.5rem
-  min-width: rem(271);
-  min-height: rem(43);
-  font-size: rem(16);
-  font-weight: 600;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-// .buttonReg {
-//   /* Button dimensions and background */
-//   min-height: rem(43);
-//   min-width: rem(183);
-//   background-color: #fff; /* White background */
-
-//   outline: none; /* Remove focus outline */
-
-//   /* Text styling */
-//   font-family: 'Montserrat', sans-serif; /* Use Montserrat font or similar */
-//   font-size: rem(14); /* Adjust font size as needed */
-//   font-weight: bold; /* Bold text */
-//   text-align: center; /* Center text within the button */
-//   text-transform: uppercase; /* Convert text to uppercase */
-//   color: #333; /* Dark gray text color */
-//   padding: rem(14) rem(20); /* Add padding around text */
-
-//   /* Rounded corners */
-//   border: rem(1) dashed #007bff; /* Blue dashed border */
-//   border-spacing: rem(199); /* Increase border spacing */
-//   border-radius: rem(25);
-//   /* Linear gradient for background effect */
-
-//   /* Hover effect: darken background and add box shadow */
-//   // &:hover {
-//   //   background-image: linear-gradient(to right, #3674d9, #4a92e8);
-//   //   box-shadow: inset 0 0 rem(3) rgba(0, 0, 0, 0.2);
-//   // }
-// }
