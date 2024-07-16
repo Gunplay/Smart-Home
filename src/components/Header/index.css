@@ -1,0 +1,46 @@
+/* src/components/Header.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f5f5;
+  padding: 10px 20px;
+  width: 1280px;
+  margin: auto;
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+}
+
+.catalog span {
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+}
+
+.menu-icon div {
+  width: 20px;
+  height: 2px;
+  background-color: #8d8d8d;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons .fa-icon {
+  font-size: 20px;
+  color: #8d8d8d;
+  cursor: pointer;
+}
