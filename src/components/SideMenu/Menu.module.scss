@@ -1,0 +1,99 @@
+.sideMenuContainer {
+  position: relative;
+  z-index: 99;
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f0f7f7;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.menuToggle span {
+  margin-right: 10px;
+}
+
+.dropdownIcon {
+  font-size: 14px;
+}
+.menuIcon div {
+  width: 20px;
+  height: 2px;
+  background-color: #8d8d8d;
+  margin-top: 5px;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  width: 394px;
+  height: 44x;
+  border-radius: 10px;
+  border-radius: 10px;
+
+  padding: 20px;
+  margin-top: 5px;
+  position: absolute;
+  top: 50px;
+}
+
+.category {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.category:hover,
+.category.active {
+  background-color: #ffe5e5;
+}
+
+.subcategoriesContainer {
+  position: absolute;
+  left: 220px;
+  top: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+.subcategory {
+  margin-right: 30px;
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
