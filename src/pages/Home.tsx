@@ -3,7 +3,6 @@ import AboutUs from '../components/AboutUs';
 import Carousel from '../components/Carousel';
 import AppCart from '../components/Cart';
 import Header from '../components/Header';
-import Menu from '../components/Menu/menu';
 
 import NavigationBar from '../components/NewHeader';
 import ProductsList from '../components/ProductsList';
@@ -15,7 +14,6 @@ function Home() {
     <>
       <NavigationBar />
       <Header />
-      <Menu />
       <Carousel />
       <RecommendProducts />
       <ProductsList />
