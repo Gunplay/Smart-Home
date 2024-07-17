@@ -1103,6 +1103,18 @@ video {
   padding-bottom: 2rem;
 }
 
+.pt-60 {
+  padding-top: 15rem;
+}
+
+.pt-15 {
+  padding-top: 3.75rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .text-center {
   text-align: center;
 }

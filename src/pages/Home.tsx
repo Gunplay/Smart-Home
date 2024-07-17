@@ -17,10 +17,10 @@ function Home() {
       <Header />
       <Menu />
       <Carousel />
-      <RecommendProducts />
+      {/* <RecommendProducts /> */}
       <ProductsList />
       <AboutUs />
-      <AppCart />
+      {/* <AppCart /> */}
     </>
   );
 }
