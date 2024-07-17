@@ -3,7 +3,7 @@ import AboutUs from '../components/AboutUs';
 import Carousel from '../components/Carousel';
 
 import Header from '../components/Header';
-import Menu from '../components/Menu/menu';
+import SideMenu from '../components/SideMenu';
 
 import NavigationBar from '../components/NewHeader';
 import ProductsList from '../components/ProductsList';
@@ -14,8 +14,9 @@ function Home() {
     <>
       <NavigationBar />
       <Header />
-      <Menu />
+
       <Carousel />
+      <ProductsList />
       {/* <RecommendProducts /> */}
       <ProductsList />
       <AboutUs />
