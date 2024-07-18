@@ -28,9 +28,8 @@
 .categories {
   display: flex;
   flex-direction: column;
-  width: 394px;
-  height: 44x;
-  border-radius: 10px;
+  // width: 394px;
+  // height: 44x;
   border-radius: 10px;
 
   padding: 20px;
@@ -40,32 +39,36 @@
 }
 
 .category {
-  background-color: white;
+  background-color: #fff;
   margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 394px;
+  height: 44x;
   transition: background-color 0.3s;
   cursor: pointer;
   position: relative;
+  gap: 10px;
 }
 
 .category:hover,
 .category.active {
-  background-color: #ffe5e5;
+  background-color: #fdd9db;
 }
 
 .subcategoriesContainer {
   position: absolute;
-  left: 220px;
-  top: 0;
+  left: 430px;
+  top: 75px;
   background-color: white;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 40px;
+  padding: 40px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s;
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
+  width: 540px;
+  height: 535px;
 }
 
 .subcategory {
