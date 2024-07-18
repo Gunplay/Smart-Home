@@ -1,43 +1,100 @@
-import pixel from '../../assets/productsCardPicture/GooglePixel9Pro16128GBObsidian0.jpg';
-import styles from './ProductsList.module.scss';
+import React from 'react';
+import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
+import onePlus from '../../assets/productsCardPicture/GooglePixel9Pro16128GBObsidian0.jpg';
 import ProductCard from './Product';
+import styles from './ProductsList.module.scss';
+interface Product {
+  id: number;
+  name: string;
+  images: string[];
+  oldPrice: string;
+  newPrice: string;
+  reviews: number;
+  category: string;
+}
 
-const products = [
-  {
-    name: 'Розумний дверний замок Aqara Smart D...',
-    images: [pixel, pixel],
-    oldPrice: '11 100 ₴',
-    newPrice: '9 990 ₴',
-    reviews: 115,
-  },
-  {
-    name: 'Розумний дверний замок Aqara Smart D...',
-    images: [pixel, pixel],
-    oldPrice: '11 100 ₴',
-    newPrice: '9 990 ₴',
-    reviews: 115,
-  },
-  {
-    name: 'Розумний дверний замок Aqara Smart D...',
-    images: [pixel, pixel],
-    oldPrice: '11 100 ₴',
-    newPrice: '9 990 ₴',
-    reviews: 115,
-  },
-  {
-    name: 'Розумний дверний замок Aqara Smart D...',
-    images: [pixel, pixel],
-    oldPrice: '11 100 ₴',
-    newPrice: '9 990 ₴',
-    reviews: 115,
-  },
-];
+const products: { [category: string]: Product[] } = {
+  'Супер знижки': [
+    {
+      id: 0,
+      name: 'Розумний дверний замок Aqara Smart D...',
+      images: [onePlus],
+      oldPrice: '11 100 ₴',
+      newPrice: '9 990 ₴',
+      reviews: 115,
+      category: 'Супер знижки',
+    },
+    {
+      id: 1,
+      name: 'Розумний дверний замок Aqara Smart D...',
+      images: [onePlus],
+      oldPrice: '11 100 ₴',
+      newPrice: '9 990 ₴',
+      reviews: 115,
+      category: 'Супер знижки',
+    },
+  ],
+  'Новинки року': [
+    {
+      id: 2,
+      name: 'Новий смартфон Samsung Galaxy S23...',
+      images: [onePlus],
+      oldPrice: '24 990 ₴',
+      newPrice: '22 490 ₴',
+      reviews: 567,
+      category: 'Новинки року',
+    },
+    {
+      id: 3,
+      name: 'Розумний дверний замок Aqara Smart D...',
+      images: [onePlus],
+      oldPrice: '11 100 ₴',
+      newPrice: '9 990 ₴',
+      reviews: 115,
+      category: 'Новинки року',
+    },
+  ],
+  'Найкраще для вас': [
+    {
+      id: 4,
+      name: 'Новий смартфон Samsung Galaxy S23...',
+      images: [onePlus],
+      oldPrice: '24 990 ₴',
+      newPrice: '22 490 ₴',
+      reviews: 567,
+      category: 'Найкраще для вас',
+    },
+    {
+      id: 5,
+      name: 'Розумний дверний замок Aqara Smart D...',
+      images: [onePlus],
+      oldPrice: '11 100 ₴',
+      newPrice: '9 990 ₴',
+      reviews: 115,
+      category: 'Найкраще для вас',
+    },
+  ],
+};
 
-const ProductsList = () => {
+const ProductsList: React.FC = () => {
   return (
     <div className={styles.productsListWrapper}>
-      {products.map((product, index) => (
-        <ProductCard key={index} product={product} />
+      {Object.keys(products).map(category => (
+        <div key={category} className={styles.categorySection}>
+          <div className={styles.wrapperHeaderProducts}>
+            <h2 className={styles.categoryTitle}>{category}</h2>
+            <img
+              src={buttonNextProducts}
+              className={styles.buttonNextProducts}
+            ></img>
+          </div>
+
+          <div className={styles.productsContainer}>
+            {products[category].map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   );

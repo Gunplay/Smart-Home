@@ -1,12 +1,10 @@
 .card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center;
-  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   overflow: hidden;
-  max-width: 300px;
+  width: 200px;
+  text-align: center;
+  margin: 10px;
 }
 
 .imageContainer {
@@ -16,7 +14,6 @@
 .productImage {
   width: 100%;
   height: auto;
-  border-radius: 12px;
 }
 
 .arrowLeft,
@@ -24,55 +21,54 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  font-size: 24px;
   cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
 }
 
 .arrowLeft {
-  left: 8px;
+  left: 0;
 }
 
 .arrowRight {
-  right: 8px;
+  right: 0;
 }
 
 .productName {
-  font-size: 18px;
-  margin: 12px 0;
+  font-size: 16px;
+  margin: 10px 0;
 }
 
 .priceContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin: 10px 0;
 }
 
 .oldPrice {
   text-decoration: line-through;
-  color: gray;
-  margin-right: 8px;
+  color: #999;
 }
 
 .newPrice {
-  font-size: 20px;
-  color: #f00;
+  color: #e60000;
 }
 
 .ratingContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
 }
 
 .rating {
   color: gold;
-  margin-right: 4px;
 }
 
 .reviews {
-  font-size: 14px;
-  color: gray;
+  color: #666;
 }
