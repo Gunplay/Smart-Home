@@ -1,7 +1,125 @@
 .productsListWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 1280px;
+  margin: auto;
+  padding: 60px 0px 80px 0px;
+  gap: 2rem; /* Adjust the gap between categories as needed */
+  background-color: #fbf1d6;
+}
+
+.categorySection {
+  margin: 0px 20px 0px 40px;
+  //width: 100%;
+}
+.wrapperHeaderProducts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categoryTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0px 0px 0px 40px;
+  margin-bottom: 1rem; /* Space below category title */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.productsContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  // margin: 0px 20px 0px 40px;
   flex-wrap: wrap;
-  gap: 20px; // Adjust the gap between cards as needed
-  margin: 10px;
+  gap: 1rem; /* Adjust the gap between products as needed */
+}
+
+.card {
+  width: calc(25% - 1rem); /* Adjust the width of the product card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* Adjust this to maintain the aspect ratio */
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.productImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.arrowLeft {
+  left: 0.5rem;
+}
+
+.arrowRight {
+  right: 0.5rem;
+}
+
+.productName {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.newPrice {
+  color: #e60023;
+  font-weight: bold;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  margin-right: 0.5rem;
+  color: gold;
+}
+
+.reviews {
+  color: #555;
+}
+
+.buttonNextProducts {
+  cursor: pointer;
 }
