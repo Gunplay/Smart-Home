@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0f5f5;
+  background-color: #fbf1d6;
   padding: 10px 20px;
   width: 1280px;
   margin: auto;
@@ -32,6 +32,14 @@
   width: 20px;
   height: 2px;
   background-color: #8d8d8d;
+}
+
+.icon {
+  border-radius: 20px;
+  padding: 10px 20px;
+  /* width: 64px; */
+  /* height: 44px; */
+  background-color: #fff;
 }
 
 .icons {
