@@ -23,10 +23,10 @@ const Header: React.FC = () => {
         </div> */}
       </div>
       <div className="icons">
-        <FontAwesomeIcon icon={faSearch} />
-        <FontAwesomeIcon icon={faBalanceScale} />
-        <FontAwesomeIcon icon={faHeart} />
-        <FontAwesomeIcon icon={faShoppingBag} />
+        <FontAwesomeIcon className="icon" icon={faSearch} />
+        <FontAwesomeIcon className="icon" icon={faBalanceScale} />
+        <FontAwesomeIcon className="icon" icon={faHeart} />
+        <FontAwesomeIcon className="icon" icon={faShoppingBag} />
       </div>
     </div>
   );
