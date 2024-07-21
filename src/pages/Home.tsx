@@ -4,7 +4,7 @@ import Carousel from '../components/Carousel';
 
 import Header from '../components/Header';
 
-import NavigationBar from '../components/NewHeader';
+import NavigationBar from '../components/NewHeader/NavigationBar';
 import ProductsList from '../components/ProductsList';
 
 function Home() {
