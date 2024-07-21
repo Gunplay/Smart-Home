@@ -6,7 +6,9 @@ import styles from './NavigationBar.module.scss';
 const NavigationBar: React.FC = () => {
   return (
     <div className={styles.navbar}>
-      <div className={styles.navbar_logo}>LOGO</div>
+      <a href="/">
+        <div className={styles.navbar_logo}>LOGO</div>
+      </a>
       <div className={styles.navbar_links}>
         <div className={styles.warranty}>
           <a href="#">Гарантія</a>
