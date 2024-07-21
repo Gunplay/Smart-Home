@@ -41,6 +41,10 @@
   padding: 12px 24px;
   width: 116px;
   height: 43px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e69779;
 }
 
 .exchange {
@@ -53,6 +57,10 @@
   padding: 12px 24px;
   width: 97px;
   height: 43px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e69779;
 }
 
 .news {
@@ -65,6 +73,10 @@
   padding: 12px 24px;
   width: 109px;
   height: 43px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e69779;
 }
 
 .support_service {
@@ -77,6 +89,10 @@
   padding: 12px 24px;
   width: 201px;
   height: 43px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e69779;
 }
 
 .blog {
@@ -89,6 +105,10 @@
   padding: 12px 24px;
   width: 85px;
   height: 43px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e69779;
 }
 
 .navbar_links {
@@ -97,10 +117,9 @@
 }
 
 .navbar_links a {
-  text-decoration: none;
-  color: #d19087;
+  // text-decoration: none;
+  // color: #d19087;
   /* Light brown color */
-  font-size: 18px;
 }
 
 .navbar_auth {
@@ -127,10 +146,10 @@
 }
 
 .text {
-font-family: "Jura", sans-serif;
-font-weight: 600;
-font-size: 16px;
-color: #393939;
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #393939;
 }
 
 .auth_button {
