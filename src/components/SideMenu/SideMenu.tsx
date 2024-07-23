@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Menu.module.scss';
+import styles from './SideMenu.module.scss';
 
 const categories = [
   { name: 'Послуги', subcategories: [] },
@@ -80,11 +80,23 @@ const SideMenu = () => {
   return (
     <div className={styles.sideMenuContainer}>
       <div className={styles.menuToggle} onClick={handleToggleMenu}>
-        <span>Каталог</span>
-        <div className={styles.menuIcon}>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className={styles.menuBox}>
+          <div className={styles.menuTitle}>Каталог</div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 20H20M4 12H20M4 4H20"
+              stroke="#A0A591"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
       {isMenuVisible && (

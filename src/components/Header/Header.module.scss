@@ -1,16 +1,26 @@
 /* src/components/Header.css */
 
 .header {
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #fbf1d6;
-  padding: 10px 20px;
+  // padding: 10px 20px;
   width: 1280px;
+  height: 44px;
   margin: auto;
 }
 
-.catalog {
+.box {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.menu {
   display: flex;
   align-items: center;
 }
@@ -37,14 +47,21 @@
 .icon {
   border-radius: 20px;
   padding: 10px 20px;
-  /* width: 64px; */
-  /* height: 44px; */
-  background-color: #fff;
+  width: 64px;
+  height: 44px;
+  background: #fff;
+}
+
+.iconBox {
+  width: 24px;
+  height: 24px;
 }
 
 .icons {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+  width: 376px;
+  height: 44px;
 }
 
 .icons .fa-icon {
