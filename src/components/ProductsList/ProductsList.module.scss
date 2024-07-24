@@ -10,19 +10,23 @@
 }
 
 .categorySection {
-  margin: 0px 20px 0px 40px;
-  //width: 100%;
+  width: 1200px;
+  //gap: 40px;
+
+  margin: 0px 40px 0px 60px;
 }
 .wrapperHeaderProducts {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 20px;
+  width: 1200px;
+  height: 44px;
 }
 .categoryTitle {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin: 0px 0px 0px 40px;
+  // display: flex;
+  // justify-content: start;
+  // align-items: center;
+  //margin: 0px 0px 0px 40px;
   margin-bottom: 1rem; /* Space below category title */
   font-size: 1.5rem;
   font-weight: bold;
@@ -32,10 +36,10 @@
   display: flex;
   justify-content: start;
   align-items: center;
-
+  // margin: 0px 40px 0px 40px;
   // margin: 0px 20px 0px 40px;
   flex-wrap: wrap;
-  gap: 1rem; /* Adjust the gap between products as needed */
+  gap: 40px; /* Adjust the gap between products as needed */
 }
 
 .card {
@@ -51,11 +55,12 @@
   width: 100%;
   padding-top: 75%; /* Adjust this to maintain the aspect ratio */
   overflow: hidden;
+
   border-radius: 0.5rem;
 }
 
 .productImage {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
