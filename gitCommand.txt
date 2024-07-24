@@ -18,7 +18,7 @@ changes
 
 1 git checkout -b blackbutton
 2 git add. 
-3 git statusgit 
+3 git status git 
 4 git commit -m "blackbutton"
 5 git status
 6 git push origin blackbutton
