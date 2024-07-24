@@ -1,0 +1,23 @@
+.footer {
+  -width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; // Adjust as needed
+  background-color: #333; // Adjust to match your design
+  padding: 20px; // Adjust as needed
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; // Adjust to match your design
+
+  img {
+    margin-bottom: 10px; // Adjust as needed
+  }
+
+  p {
+    text-align: center;
+  }
+}

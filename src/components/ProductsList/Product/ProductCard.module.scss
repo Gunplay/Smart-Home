@@ -47,11 +47,22 @@
   font-size: 16px;
 }
 
+.arrowContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
 .arrowLeft {
-  left: 0;
+  position: absolute;
+  background: none;
+  top: 50;
+  left: 5;
 }
 
 .arrowRight {
+  background: none;
+  position: absolute;
+  top: 50;
   right: 0;
 }
 

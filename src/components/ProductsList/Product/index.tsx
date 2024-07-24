@@ -31,20 +31,22 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <button onClick={handlePrevImage}>
-          <img src={leftArrow}></img>
-        </button>
-        <div>
-          <img src={heart} className={styles.iconHeart} alt="heart icon" />
-          <img
-            src={product.images[currentImageIndex]}
-            alt={product.name}
-            className={styles.productImage}
-          />
+        <div className={styles.arrowContainer}>
+          <button onClick={handlePrevImage}>
+            <img src={leftArrow} className={styles.arrowLeft}></img>
+          </button>
+          <div>
+            <img src={heart} className={styles.iconHeart} alt="heart icon" />
+            <img
+              src={product.images[currentImageIndex]}
+              alt={product.name}
+              className={styles.productImage}
+            />
+          </div>
+          <button onClick={handleNextImage}>
+            <img src={rightArrow} className={styles.arrowRight}></img>
+          </button>
         </div>
-        <button onClick={handleNextImage}>
-          <img src={rightArrow}></img>
-        </button>
       </div>
       <h3 className={styles.productName}>{product.name}</h3>
       <div className={styles.gridContainer}>
