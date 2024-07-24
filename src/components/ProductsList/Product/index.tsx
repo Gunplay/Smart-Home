@@ -15,7 +15,7 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  console.log('product', product);
+
   const handleNextImage = () => {
     setCurrentImageIndex(prevIndex => (prevIndex + 1) % product.images.length);
   };

@@ -36,7 +36,6 @@ const Carousel = () => {
   };
 
   const goToSlide = (slideIndex: SetStateAction<number>) => {
-    console.log(slideIndex);
     setCurrentIndex(slideIndex);
   };
 

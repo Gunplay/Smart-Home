@@ -1,14 +1,25 @@
 .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
+  // border: 1px solid #ddd;
+  // border-radius: 8px;
+  // overflow: hidden;
+  // width: 200px;
+  // text-align: center;
+  // margin: 10px;
+  border-radius: 24px;
+  padding: 10px;
   width: 200px;
-  text-align: center;
-  margin: 10px;
+  height: 280px;
+  min-width: 180px;
+  max-width: 260px;
+  background: #fff;
 }
 
 .imageContainer {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .productImage {
