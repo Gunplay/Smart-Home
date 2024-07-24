@@ -3,7 +3,6 @@ import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts
 import onePlus from '../../assets/productsCardPicture/GooglePixel9Pro16128GBObsidian0.jpg';
 import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
-
 interface Product {
   id: number;
   name: string;
@@ -179,6 +178,7 @@ const ProductsList: React.FC = () => {
         <div key={category} className={styles.categorySection}>
           <div className={styles.wrapperHeaderProducts}>
             <h2 className={styles.categoryTitle}>{category}</h2>
+
             <img
               src={buttonNextProducts}
               className={styles.buttonNextProducts}

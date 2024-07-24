@@ -12,18 +12,21 @@
 .categorySection {
   width: 1200px;
   //gap: 40px;
+
   margin: 0px 40px 0px 60px;
 }
 .wrapperHeaderProducts {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
   width: 1200px;
-  justify-content: space-around;
+  height: 44px;
 }
 .categoryTitle {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin: 0px 0px 0px 40px;
+  // display: flex;
+  // justify-content: start;
+  // align-items: center;
+  //margin: 0px 0px 0px 40px;
   margin-bottom: 1rem; /* Space below category title */
   font-size: 1.5rem;
   font-weight: bold;
@@ -57,7 +60,7 @@
 }
 
 .productImage {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
