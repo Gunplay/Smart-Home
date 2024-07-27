@@ -1,6 +1,7 @@
 .sideMenuContainer {
   position: relative;
   z-index: 99;
+  font-family: 'Jura', sans-serif;
 }
 
 .menuToggle {
@@ -49,12 +50,13 @@
   // width: 394px;
   // height: 44x;
   border-radius: 10px;
-
-  padding: 20px;
-  margin-top: 5px;
+  // padding-top: 10px;
+  margin-top: 10px;
+  // padding: 20px;
+  // margin-top: 5px;
 
   position: absolute;
-  top: 50px;
+  // top: 50px;
 }
 
 .category {
@@ -68,6 +70,8 @@
   cursor: pointer;
   position: relative;
   gap: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .category:hover,
@@ -77,12 +81,14 @@
 
 .subcategoriesContainer {
   position: absolute;
-  left: 430px;
-  top: 75px;
+  // left: 394px;
+  // top: 10px;
+  margin-top: 10px;
+  margin-left: 394px;
   background-color: white;
   border-radius: 40px;
   padding: 40px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s;
   display: flex;
   flex-wrap: wrap;

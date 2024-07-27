@@ -2,7 +2,15 @@ import { useState } from 'react';
 import styles from './SideMenu.module.scss';
 
 const categories = [
-  { name: 'Послуги', subcategories: [] },
+  {
+    name: 'Послуги',
+    subcategories: [
+      {
+        name: 'Послуги',
+        items: ['В розробці ...'],
+      },
+    ],
+  },
   {
     name: 'Розумні пристрої',
     subcategories: [
@@ -51,10 +59,42 @@ const categories = [
       },
     ],
   },
-  { name: 'Системи автоматизації', subcategories: [] },
-  { name: 'Аксесуари та компоненти', subcategories: [] },
-  { name: 'Програмне забезпечення та додатки', subcategories: [] },
-  { name: 'Інше', subcategories: [] },
+  {
+    name: 'Системи автоматизації',
+    subcategories: [
+      {
+        name: 'Системи автоматизації',
+        items: ['В розробці ...'],
+      },
+    ],
+  },
+  {
+    name: 'Аксесуари та компоненти',
+    subcategories: [
+      {
+        name: 'Аксесуари та компоненти',
+        items: ['В розробці ...'],
+      },
+    ],
+  },
+  {
+    name: 'Програмне забезпечення та додатки',
+    subcategories: [
+      {
+        name: 'Програмне забезпечення та додатки',
+        items: ['В розробці ...'],
+      },
+    ],
+  },
+  {
+    name: 'Інше',
+    subcategories: [
+      {
+        name: 'Інше',
+        items: ['В розробці ...'],
+      },
+    ],
+  },
 ];
 
 const SideMenu = () => {
@@ -110,6 +150,21 @@ const SideMenu = () => {
               onMouseEnter={() => handleMouseEnter(category.name)}
             >
               <span>{category.name}</span>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 6L15 12L9 18"
+                  stroke="#A0A591"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           ))}
         </div>
