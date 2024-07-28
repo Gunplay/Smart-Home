@@ -1,0 +1,38 @@
+.WrapperFooter {
+  display: grid;
+  background: black;
+  grid-template-columns: repeat(4, 4fr);
+  // grid-template-rows: 100px 100px 100px 100px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 1280px;
+}
+
+.section {
+  padding-left: 10px;
+  border: 1px solid white;
+  color: white;
+}
+.secLogo {
+  font-size: 24px;
+  color: #fff;
+  /* Add more styles as needed */
+}
+
+.secClients {
+  font-size: 18px;
+  color: #ccc;
+  /* Add more styles as needed */
+}
+
+.secCategories {
+  font-size: 18px;
+  color: #ccc;
+  /* Add more styles as needed */
+}
+
+.secOurSecSocialMedia {
+  font-size: 18px;
+  color: #ccc;
+  /* Add more styles as needed */
+}

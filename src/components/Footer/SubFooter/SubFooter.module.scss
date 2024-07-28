@@ -1,5 +1,10 @@
+.WrapperFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
-  -width: 1280px;
+  width: 1280px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px; // Adjust as needed

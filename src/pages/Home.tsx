@@ -4,9 +4,10 @@ import Carousel from '../components/Carousel';
 
 import Header from '../components/Header/Header';
 
+import Footer from '../components/Footer';
+import SubFooter from '../components/Footer/SubFooter';
 import NavigationBar from '../components/NewHeader/NavigationBar';
 import ProductsList from '../components/ProductsList';
-import SubFooter from '../components/SubFooter';
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <ProductsList />
       {/* <RecommendProducts /> */}
       <SubFooter />
+      <Footer />
       {/* <AboutUs /> */}
       {/* <AppCart /> */}
     </>
