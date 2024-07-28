@@ -1,38 +1,58 @@
 .WrapperFooter {
   display: grid;
-  background: black;
-  grid-template-columns: repeat(4, 4fr);
-  // grid-template-rows: 100px 100px 100px 100px;
+  justify-content: center;
+  align-items: center;
+}
+.Footer {
+  background-color: #333;
+  display: grid;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  grid-template-columns: repeat(4, 290px 290px 290px 312px);
   width: 1280px;
+  padding: 20px;
 }
-
 .section {
   padding-left: 10px;
-  border: 1px solid white;
   color: white;
 }
-.secLogo {
-  font-size: 24px;
-  color: #fff;
+.styleCategories {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: #c6d6e6;
+  margin-bottom: 20px;
+}
+.oneCategory {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e6f0f0;
+  margin-bottom: 5px;
+}
+.Logo {
+  // font-size: 24px;
+  // color: #fff;
   /* Add more styles as needed */
 }
 
-.secClients {
-  font-size: 18px;
-  color: #ccc;
+.Clients {
+  // font-size: 18px;
+  // color: #ccc;
   /* Add more styles as needed */
 }
 
-.secCategories {
-  font-size: 18px;
-  color: #ccc;
+.Categories {
+  // font-size: 18px;
+  // color: #ccc;
   /* Add more styles as needed */
 }
-
-.secOurSecSocialMedia {
-  font-size: 18px;
-  color: #ccc;
-  /* Add more styles as needed */
+.WrapperOurSecSocialMedia {
+  display: grid;
+  border-left: 1px solid #c5e1ed;
+  padding: 0px 0px 0px 25px;
+}
+.OurSecSocialMedia {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
 }
