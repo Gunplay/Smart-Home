@@ -36,20 +36,40 @@ const Footer = () => {
         <div className={`${styles.section} ${styles.WrapperOurSecSocialMedia}`}>
           <div className={styles.styleCategories}>Наші соціальні мережі </div>
           <div className={styles.OurSecSocialMedia}>
-            <div className="div">
-              <img src={facebook} alt="soical medeia" />
+            <div className={styles.allSocialMediaIcons}>
+              <img
+                src={facebook}
+                alt="soical medeia"
+                className={styles.iconsStyle}
+              />
             </div>
-            <div className="div">
-              <img src={instagram} alt="soical medeia" />
+            <div className={styles.allSocialMediaIcons}>
+              <img
+                src={instagram}
+                alt="soical medeia"
+                className={styles.iconsStyle}
+              />
             </div>
-            <div className="div">
-              <img src={telegram} alt="soical medeia" />
+            <div className={styles.allSocialMediaIcons}>
+              <img
+                src={telegram}
+                alt="soical medeia"
+                className={styles.iconsStyle}
+              />
             </div>
-            <div className="div">
-              <img src={ticTock} alt="soical medeia" />
+            <div className={styles.allSocialMediaIcons}>
+              <img
+                src={ticTock}
+                alt="soical medeia"
+                className={styles.iconsStyle}
+              />
             </div>
-            <div className="div">
-              <img src={youTube} alt="soical medeia" />
+            <div className={styles.allSocialMediaIcons}>
+              <img
+                src={youTube}
+                alt="soical medeia"
+                className={styles.iconsStyle}
+              />
             </div>
           </div>
         </div>

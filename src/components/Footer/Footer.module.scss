@@ -1,21 +1,25 @@
+/* Footer.module.scss */
 .WrapperFooter {
-  display: grid;
+  display: flex;
   justify-content: center;
-  align-items: center;
+  //background-color: #333;
+  padding-top: 1px;
 }
+
 .Footer {
-  background-color: #333;
   display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  grid-template-columns: repeat(4, 290px 290px 290px 312px);
+  grid-template-columns: repeat(4, 4fr);
+  gap: 20px;
+  background-color: #333;
+  //width: 100%;
   width: 1280px;
   padding: 20px;
 }
+
 .section {
-  padding-left: 10px;
   color: white;
 }
+
 .styleCategories {
   font-family: 'Jura', sans-serif;
   font-weight: 600;
@@ -23,6 +27,7 @@
   color: #c6d6e6;
   margin-bottom: 20px;
 }
+
 .oneCategory {
   font-family: 'Tenor Sans', sans-serif;
   font-weight: 400;
@@ -30,29 +35,63 @@
   color: #e6f0f0;
   margin-bottom: 5px;
 }
-.Logo {
-  // font-size: 24px;
-  // color: #fff;
-  /* Add more styles as needed */
-}
 
-.Clients {
-  // font-size: 18px;
-  // color: #ccc;
-  /* Add more styles as needed */
-}
-
-.Categories {
-  // font-size: 18px;
-  // color: #ccc;
-  /* Add more styles as needed */
-}
 .WrapperOurSecSocialMedia {
-  display: grid;
   border-left: 1px solid #c5e1ed;
-  padding: 0px 0px 0px 25px;
+  padding-left: 25px;
 }
+
 .OurSecSocialMedia {
   display: grid;
-  grid-template-columns: repeat(3, 3fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  cursor: pointer;
+}
+
+.allSocialMediaIcons {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2px;
+  margin: 20px 0px 40px 0px;
+}
+.iconsStyle {
+  width: 40px; /* Adjust size as needed */
+  height: 30px;
+}
+// img {
+//   width: 24px; /* Adjust size as needed */
+//   height: 24px; /* Adjust size as needed */
+// }
+
+@media (max-width: 768px) {
+  .Footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .WrapperOurSecSocialMedia {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .OurSecSocialMedia {
+    display: grid;
+    // grid-template-columns: ;
+  }
+}
+@media (max-width: 480px) {
+  .Footer {
+    grid-template-columns: 1fr;
+  }
+
+  .OurSecSocialMedia {
+    grid-template-columns: repeat(2, 1fr);
+
+    .styleCategories {
+      font-size: 20px;
+    }
+
+    .oneCategory {
+      font-size: 14px;
+    }
+  }
 }
