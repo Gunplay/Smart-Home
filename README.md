@@ -3,8 +3,8 @@
 This Smart Home project is being developed for commercial experience in team collaboration. It will utilize both front-end and back-end technologies. The front-end will be built using React.js, TypeScript, Redux-toolkit, and Tailwind, while the back-end will be developed with Java and PostgreSQL.
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-1. To get the project started - npm run tailwind (watching update css tailwind)
-2. To get the project started - npm run dev (start project)
+1. To get the project started - npm run tailwind (watching update css tailwind) //do not execute this command
+2. To get the project started - npm start (start project)
 
 Currently, two official plugins are available:
 
