@@ -38,12 +38,14 @@
 .dropdownIcon {
   font-size: 14px;
 }
+
 .menuIcon div {
   width: 20px;
   height: 2px;
   background-color: #8d8d8d;
   margin-top: 5px;
 }
+
 .categories {
   display: flex;
   flex-direction: column;
@@ -94,12 +96,31 @@
   flex-wrap: wrap;
   width: 540px;
   height: 535px;
+  &>.box {
+    width: 200px;
+    height: 455px;
+  }
 }
 
 .subcategory {
   margin-right: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 41px;
   min-width: 200px;
+
+  &>h4 {
+    font-family: "Jura", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #393939;
+    margin-bottom: 20px;
+  }
+
+  &>ul>li {
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #393939;
+  }
 }
 
 h4 {
@@ -120,6 +141,7 @@ li {
     opacity: 0;
     transform: translateX(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

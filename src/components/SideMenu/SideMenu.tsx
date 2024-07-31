@@ -174,18 +174,20 @@ const SideMenu = () => {
           className={styles.subcategoriesContainer}
           onMouseLeave={handleMouseLeaveSubmenu}
         >
-          {categories
-            .find(category => category.name === activeCategory)
-            ?.subcategories.map((subcategory, subIndex) => (
-              <div key={subIndex} className={styles.subcategory}>
-                <h4>{subcategory.name}</h4>
-                <ul>
-                  {subcategory.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className={styles.box}>
+            {categories
+              .find(category => category.name === activeCategory)
+              ?.subcategories.map((subcategory, subIndex) => (
+                <div key={subIndex} className={styles.subcategory}>
+                  <h4>{subcategory.name}</h4>
+                  <ul>
+                    {subcategory.items.map((item, itemIndex) => (
+                      <li key={itemIndex}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
         </div>
       )}
     </div>
