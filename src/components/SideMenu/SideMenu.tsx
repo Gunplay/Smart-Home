@@ -263,7 +263,9 @@ const SideMenu = () => {
                 <h4>{subcategory.name}</h4>
                 <ul>
                   {subcategory.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item}</li>
+                    <li key={itemIndex}>
+                      <a href="#">{item}</a>
+                    </li>
                   ))}
                 </ul>
               </div>
