@@ -15,16 +15,17 @@ interface ProductCardProps {
   product: Product;
 }
 
-const ProductCard: FC<ProductCardProps> = ({ product }) => {
+const ProductCard: FC<ProductCardProps> = ({ items }) => {
+  console.log('prod', items);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex + 1) % product.images.length);
+    setCurrentImageIndex(prevIndex => (prevIndex + 1) % items.images.length);
   };
 
   const handlePrevImage = () => {
     setCurrentImageIndex(prevIndex =>
-      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? items.images.length - 1 : prevIndex - 1
     );
   };
 
@@ -38,8 +39,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <div>
             <img src={heart} className={styles.iconHeart} alt="heart icon" />
             <img
-              src={product.images[currentImageIndex]}
-              alt={product.name}
+              src={items.images[currentImageIndex]}
+              alt={items.name}
               className={styles.productImage}
             />
           </div>
@@ -48,7 +49,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           </button>
         </div>
       </div>
-      <h3 className={styles.productName}>{product.name}</h3>
+      <h3 className={styles.productName}>{items.name}</h3>
       <div className={styles.gridContainer}>
         <div className={styles.ratingContainer}>
           {/* Добавьте столько звезд, сколько нужно */}
@@ -56,8 +57,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.reviews}></span>
         </div>
         <div className={styles.priceContainer}>
-          <span className={styles.oldPrice}>{product.oldPrice}</span>
-          <span className={styles.newPrice}>{product.newPrice}</span>
+          <span className={styles.oldPrice}>{items.oldPrice}</span>
+          <span className={styles.newPrice}>{items.newPrice}</span>
         </div>
       </div>
     </div>

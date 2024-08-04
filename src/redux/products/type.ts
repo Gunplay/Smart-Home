@@ -4,3 +4,19 @@ export enum Status {
   SUCCESS = 'completed',
   ERROR = 'error',
 }
+
+export interface Products {
+  name: string;
+  internalCode: number;
+  price: number;
+  isAvailable: boolean;
+  quantity: number;
+  description: string;
+  imageUrl: string;
+  id: number;
+}
+
+export interface ProductsSlice {
+  items: Products[];
+  status: Status;
+}

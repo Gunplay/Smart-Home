@@ -4,4 +4,6 @@ export {
   default as Home,
   default as Register,
   default as SignIn,
+  default as Footer,
+  default as SubFooter,
 } from './Home';
