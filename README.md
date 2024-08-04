@@ -4,7 +4,7 @@ This Smart Home project is being developed for commercial experience in team col
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 1. To get the project started - npm run tailwind (watching update css tailwind) //do not execute this command
-2. To get the project started - npm start (start project)
+2. To get the project started - npm start dev (start project)
 
 Currently, two official plugins are available:
 
