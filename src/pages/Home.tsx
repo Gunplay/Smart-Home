@@ -9,21 +9,17 @@ import SubFooter from '../components/Footer/SubFooter';
 import NavigationBar from '../components/NewHeader/NavigationBar';
 import ProductsList from '../components/ProductsList';
 
-function Home() {
+const Home = () => {
   return (
     <>
       <NavigationBar />
       <Header />
-
       <Carousel />
       <ProductsList />
-      {/* <RecommendProducts /> */}
       <SubFooter />
       <Footer />
-      {/* <AboutUs /> */}
-      {/* <AppCart /> */}
     </>
   );
-}
+};
 
 export default Home;

@@ -1,31 +1,37 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
 import styles from './ProductCard.module.scss';
-interface Product {
-  name: string;
-  images: string[];
-  oldPrice: string;
-  newPrice: string;
-  reviews: number;
-}
+import { Products } from '../../../redux/products/type';
 
 interface ProductCardProps {
-  product: Product;
+  product: Products;
 }
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const {
+    name,
+    //description,
+    // id,
+    imageUrl,
+    //internalCode,
+    //isAvalible,
+    price,
+    //quantitty,
+  } = product;
+
+  console.log('prod', product);
+  //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex + 1) % product.images.length);
+    // setCurrentImageIndex(prevIndex => (prevIndex + 1) % imageUrl.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex(prevIndex =>
-      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
-    );
+    // setCurrentImageIndex(prevIndex =>
+    //   prevIndex === 0 ? imageUrl.length - 1 : prevIndex - 1
+    // );
   };
 
   return (
@@ -38,8 +44,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <div>
             <img src={heart} className={styles.iconHeart} alt="heart icon" />
             <img
-              src={product.images[currentImageIndex]}
-              alt={product.name}
+              src={imageUrl}
+              //     src={imageUrl[currentImageIndex]}
+              //alt={'product'}
               className={styles.productImage}
             />
           </div>
@@ -48,7 +55,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           </button>
         </div>
       </div>
-      <h3 className={styles.productName}>{product.name}</h3>
+      <h3 className={styles.productName}>{name.substring(0, 25)}</h3>
       <div className={styles.gridContainer}>
         <div className={styles.ratingContainer}>
           {/* Добавьте столько звезд, сколько нужно */}
@@ -56,8 +63,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.reviews}></span>
         </div>
         <div className={styles.priceContainer}>
-          <span className={styles.oldPrice}>{product.oldPrice}</span>
-          <span className={styles.newPrice}>{product.newPrice}</span>
+          <span className={styles.oldPrice}>{price}</span>
+          <span className={styles.newPrice}>{price}</span>
         </div>
       </div>
     </div>
