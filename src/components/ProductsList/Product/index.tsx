@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
@@ -12,26 +12,26 @@ interface ProductCardProps {
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const {
     name,
-    description,
-    id,
+    //description,
+    // id,
     imageUrl,
-    internalCode,
-    isAvalible,
+    //internalCode,
+    //isAvalible,
     price,
-    quantitty,
+    //quantitty,
   } = product;
 
   console.log('prod', product);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex + 1) % imageUrl.length);
+    // setCurrentImageIndex(prevIndex => (prevIndex + 1) % imageUrl.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex(prevIndex =>
-      prevIndex === 0 ? imageUrl.length - 1 : prevIndex - 1
-    );
+    // setCurrentImageIndex(prevIndex =>
+    //   prevIndex === 0 ? imageUrl.length - 1 : prevIndex - 1
+    // );
   };
 
   return (

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import styles from './SubFooter.module.scss';
-import delivery from '../../../assets/iImageSubFooter/delivery.svg';
+import { FC } from 'react';
 import consultation from '../../../assets/iImageSubFooter/consultation.svg';
+import delivery from '../../../assets/iImageSubFooter/delivery.svg';
 import garanty from '../../../assets/iImageSubFooter/garanty.svg';
 import repair from '../../../assets/iImageSubFooter/repair.svg';
+import styles from './SubFooter.module.scss';
 
 interface SubFooterItem {
   icon: string;
