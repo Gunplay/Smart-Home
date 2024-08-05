@@ -58,7 +58,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       <h3 className={styles.productName}>{name.substring(0, 25)}</h3>
       <div className={styles.gridContainer}>
         <div className={styles.ratingContainer}>
-          {/* Добавьте столько звезд, сколько нужно */}
+       
           <span className={styles.rating}>★★★★☆</span>
           <span className={styles.reviews}></span>
         </div>
