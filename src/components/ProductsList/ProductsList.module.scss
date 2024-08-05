@@ -1,10 +1,19 @@
 .productsListWrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  // gap: 40px;
+  // display: grid;
+  // grid-template-columns: repeat(
+  //   auto-fill,
+  //   minmax(200px, 10px)
+  // );
+  //gap: 20px;
+
   justify-content: center;
+  align-items: center;
   width: 1280px;
   margin: auto;
-  padding: 60px 0px 80px 0px;
+  padding: 20px 70px 80px 0px;
   gap: 2rem; /* Adjust the gap between categories as needed */
   background-color: #e6f0f0;
 }
@@ -33,17 +42,18 @@
 }
 
 .productsContainer {
-  display: flex;
+  display: grid;
   justify-content: start;
   align-items: center;
-  // margin: 0px 40px 0px 40px;
-  // margin: 0px 20px 0px 40px;
-  flex-wrap: wrap;
-  gap: 40px; /* Adjust the gap between products as needed */
+  margin: 0px 40px 0px 40px;
+  margin: 0px 20px 0px 40px;
+  // flex-wrap: wrap;
+  // gap: 40px; /* Adjust the gap between products as needed */
 }
 
 .card {
   width: calc(25% - 1rem); /* Adjust the width of the product card */
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 0.5rem;
@@ -53,6 +63,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
+
   padding-top: 75%; /* Adjust this to maintain the aspect ratio */
   overflow: hidden;
 
@@ -124,7 +135,52 @@
 .reviews {
   color: #555;
 }
-
+.ContainerButtonPanel {
+  width: 1280px;
+  display: grid;
+  margin: auto;
+  background-color: #e6f0f0;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: end;
+  //padding: 0px 20px 0px 0px;
+}
 .buttonNextProducts {
+  display: grid;
+  justify-content: center;
+}
+.buttonNextProductsImage {
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 3 елементи у рядку для екранів до 960px */
+  }
+}
+
+@media (max-width: 720px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 2 елементи у рядку для екранів до 720px */
+  }
+}
+
+@media (max-width: 480px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 1 елемент у рядку для екранів до 480px */
+  }
 }

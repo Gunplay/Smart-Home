@@ -7,24 +7,27 @@ const ProductsList = () => {
   const { data: products } = productsApi.useFetchProductsQuery(5);
 
   return (
-    <div className={styles.productsListWrapper}>
-      {products &&
-        products.map(items => (
-          <div key={category} className={styles.categorySection}>
-            <img
-              src={buttonNextProducts}
-              className={styles.buttonNextProducts}
-              alt="Next"
-            />
-            {/* ... other elements ... */}
+    <>
+      <div className={styles.ContainerButtonPanel}>
+        <div className={styles.buttonNextProducts}>
+          <img
+            src={buttonNextProducts}
+            className={styles.buttonNextProductsImage}
+            alt="Next"
+          />
+        </div>
+      </div>
+      <div className={styles.productsListWrapper}>
+        {products &&
+          products.map(item => (
+            // <div className={styles.categorySection}>
+            //   </div>
             <div className={styles.productsContainer}>
-              {items.map(product => (
-                <ProductCard key={product.id} product={product} /> // Pass individual product
-              ))}
+              <ProductCard product={item} />
             </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+    </>
   );
 };
 

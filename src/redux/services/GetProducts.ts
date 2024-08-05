@@ -6,11 +6,12 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dev.smarthome-team.store' }),
   endpoints: build => ({
     fetchProducts: build.query<Products[], number>({
-      query: (limit: number = 5) => ({
+      //limit: number = 5
+      query: () => ({
         url: '/api/products',
-        params: {
-          _limit: limit,
-        },
+        // params: {
+        //   _limit: limit,
+        // },
       }),
     }),
   }),
