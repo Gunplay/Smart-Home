@@ -1,6 +1,7 @@
 .productsListWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
   // gap: 40px;
   // display: grid;
   // grid-template-columns: repeat(
@@ -65,7 +66,7 @@
   width: 100%;
 
   padding-top: 75%; /* Adjust this to maintain the aspect ratio */
-  overflow: hidden;
+  //overflow: hidden;
 
   border-radius: 0.5rem;
 }

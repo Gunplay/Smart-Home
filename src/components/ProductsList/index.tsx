@@ -18,14 +18,13 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {products &&
-          products.map(item => (
-            // <div className={styles.categorySection}>
-            //   </div>
-            <div className={styles.productsContainer}>
-              <ProductCard product={item} />
-            </div>
-          ))}
+        {products?.map(item => (
+          // <div className={styles.categorySection}>
+          //   </div>
+          <div className={styles.productsContainer}>
+            <ProductCard product={item} />
+          </div>
+        ))}
       </div>
     </>
   );
