@@ -4,7 +4,16 @@ import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
 
 const ProductsList = () => {
-  const { data: products } = productsApi.useFetchProductsQuery(5);
+  const {
+    data: products,
+    error,
+    isLoading,
+  } = productsApi.useFetchProductsQuery();
+
+  console.log('Fetched Products:', products); // Debugging log
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading products</div>;
 
   return (
     <>
@@ -19,9 +28,7 @@ const ProductsList = () => {
       </div>
       <div className={styles.productsListWrapper}>
         {products?.map(item => (
-          // <div className={styles.categorySection}>
-          //   </div>
-          <div className={styles.productsContainer}>
+          <div key={item.id} className={styles.productsContainer}>
             <ProductCard product={item} />
           </div>
         ))}
