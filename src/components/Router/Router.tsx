@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import { Home } from '../../pages/index.ts';
+import Home from '../../pages/Home';
 import Register from '../Form/Register';
 import SignIn from '../Form/SignIn';
 import Page404 from '../Page404';
