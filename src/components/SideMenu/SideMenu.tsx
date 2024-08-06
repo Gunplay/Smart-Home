@@ -136,9 +136,9 @@ const SideMenu = () => {
             <path
               d="M4 20H20M4 12H20M4 4H20"
               stroke="#A0A591"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -164,9 +164,9 @@ const SideMenu = () => {
                 <path
                   d="M9 6L15 12L9 18"
                   stroke="#A0A591"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
