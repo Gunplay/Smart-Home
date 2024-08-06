@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import productsReducer from './products/slice';
 import { useSelector } from 'react-redux';
+import productsReducer from './products/slice';
 // import { productsApi } from './services/GetProducts';
 
 // Комбінування редюсерів

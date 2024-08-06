@@ -10,11 +10,19 @@ const ProductsList = () => {
   //const dispatch = useAppDispatch()
 
   const dispatch = useDispatch();
-  const products = useAppSelector(state => state.products.items);
-  console.log('res', products);
+  const { data: products, status } = useAppSelector(state => state.products);
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Failed to load products</div>;
+  }
   // const {
   //   data: products,
   //   error,

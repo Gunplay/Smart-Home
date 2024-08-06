@@ -1,10 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchProducts } from './asyncActions';
-import { ProductsSlice, Status } from './type';
+import { Products } from './type';
 
-const initialState: ProductsSlice = {
-  items: [],
-  status: Status.IDLE,
+interface ProductsState {
+  data: Products[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+}
+
+const initialState: ProductsState = {
+  data: [],
+  status: 'idle',
+  error: null,
 };
 
 const productsSlice = createSlice({
@@ -14,14 +21,18 @@ const productsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchProducts.pending, state => {
-        state.status = Status.LOADING;
+        state.status = 'loading';
       })
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.status = Status.SUCCESS;
-        state.items = action.payload;
-      })
-      .addCase(fetchProducts.rejected, state => {
-        state.status = Status.ERROR;
+      .addCase(
+        fetchProducts.fulfilled,
+        (state, action: PayloadAction<Products[]>) => {
+          state.status = 'succeeded';
+          state.data = action.payload;
+        }
+      )
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message || 'Something went wrong';
       });
   },
 });
