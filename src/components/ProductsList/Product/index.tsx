@@ -2,8 +2,8 @@ import { FC } from 'react';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
-import styles from './ProductCard.module.scss';
 import { Products } from '../../../redux/products/type';
+import styles from './ProductCard.module.scss';
 
 interface ProductCardProps {
   product: Products;
