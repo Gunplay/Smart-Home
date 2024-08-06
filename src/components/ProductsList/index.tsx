@@ -1,5 +1,5 @@
-import { Products } from 'redux/products/type';
 import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
+import { Products } from '../../redux/products/type';
 import { productsApi } from '../../redux/services/GetProducts';
 import ProductCard from './Product';
 
