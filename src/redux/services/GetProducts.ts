@@ -4,14 +4,10 @@ import { Products } from '../products/type';
 export const productsApi = createApi({
   reducerPath: 'productsAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dev.smarthome-team.store' }),
-  endpoints: build => ({
-    fetchProducts: build.query<Products[], void>({
-      //limit: number = 5
+  endpoints: builder => ({
+    fetchProducts: builder.query<Products, void>({
       query: () => ({
         url: '/api/products',
-        // params: {
-        //   _limit: limit,
-        // },
       }),
     }),
   }),

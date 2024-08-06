@@ -1,25 +1,27 @@
+// {
+//   "compilerOptions": {
+//     "jsx": "react",
+//     "composite": true,
+//     "skipLibCheck": true,
+//     "module": "ESNext",
+//     "moduleResolution": "bundler",
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true
+//   },
+//   "include": ["vite.config.js", "src/**/*"],
+//   "exclude": ["node_modules"]
+// }
+
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "composite": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["components/*"]
-    }
+    "strict": true
   },
-  "include": ["src/**/*"],
+  "include": ["vite.config.js", "src/**/*"],
   "exclude": ["node_modules"]
 }
