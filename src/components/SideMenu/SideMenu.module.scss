@@ -9,8 +9,6 @@
   align-items: center;
   cursor: pointer;
   background: #fff;
-  // background: #fbf1d6;
-  // padding: 10px 20px;
   border-radius: 20px;
   width: 148px;
   height: 44px;
@@ -49,16 +47,9 @@
 .categories {
   display: flex;
   flex-direction: column;
-  // width: 394px;
-  // height: 44x;
   border-radius: 10px;
-  // padding-top: 10px;
   margin-top: 10px;
-  // padding: 20px;
-  // margin-top: 5px;
-
   position: absolute;
-  // top: 50px;
 }
 
 .category {
@@ -83,36 +74,27 @@
 
 .subcategoriesContainer {
   position: absolute;
-  // left: 394px;
-  // top: 10px;
-  margin-top: 10px;
-  margin-left: 394px;
-  background-color: white;
+  left: 394px;
+  top: 54px;
+  background-color: #fff;
   border-radius: 40px;
   padding: 40px;
-  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s;
   display: flex;
   flex-wrap: wrap;
   width: 540px;
-  height: 535px;
-  &>.box {
-    width: 200px;
-    height: 455px;
-  }
+  justify-content: space-between;
 }
 
 .subcategory {
-  margin-right: 30px;
-  margin-bottom: 41px;
-  min-width: 200px;
+  width: 200px;
 
-  &>h4 {
+  &>a>h4 {
     font-family: "Jura", sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #393939;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   &>ul>li {
@@ -139,7 +121,7 @@ li {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(0);
   }
 
   to {
