@@ -1,0 +1,17 @@
+.Container {
+  height: 950px;
+  width: 1280px;
+  background-color: #f5f5f5;
+  display: grid;
+
+  margin: auto;
+  padding: 20px 20px 0px 20px;
+}
+
+.WrapperProductPage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}

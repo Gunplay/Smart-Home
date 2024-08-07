@@ -6,4 +6,5 @@ export {
   default as SignIn,
   default as Footer,
   default as SubFooter,
+  default as ProductPage,
 } from './Home';
