@@ -14,7 +14,9 @@ const ProductsList = () => {
   // const products = useSelector(
   //   (state: { products: { items: Products } }) => state.products.items
   // );
-  const { data: products } = productsApi.useFetchProductsQuery();
+  const { data: products } = productsApi.useFetchProductsQuery(
+    'https://dev.smarthome-team.store'
+  );
   console.log('products', products);
   //console.log('productsRTK', products);
   // useEffect(() => {
