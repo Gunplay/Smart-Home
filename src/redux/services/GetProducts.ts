@@ -5,7 +5,7 @@ export const productsApi = createApi({
   reducerPath: 'productsAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dev.smarthome-team.store' }),
   endpoints: builder => ({
-    fetchProducts: builder.query<Products, string>({
+    fetchProducts: builder.query<Products, void>({
       query: () => ({
         url: '/api/products',
       }),

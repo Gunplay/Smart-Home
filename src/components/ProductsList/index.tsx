@@ -14,10 +14,12 @@ const ProductsList = () => {
   // const products = useSelector(
   //   (state: { products: { items: Products } }) => state.products.items
   // );
-  const { data: products } = productsApi.useFetchProductsQuery(
-    'https://dev.smarthome-team.store'
-  );
+  const { data: products, error } = productsApi.useFetchProductsQuery();
   console.log('products', products);
+
+  if (error) {
+    return <div>error PRODUCTS</div>;
+  }
   //console.log('productsRTK', products);
   // useEffect(() => {
   //   dispatch(fetchProducts());
