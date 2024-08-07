@@ -30,7 +30,7 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {data.map((item: Products) => (
+        {products.map((item: Products) => (
           <div key={item.id} className={styles.productsContainer}>
             <ProductCard product={item} />
           </div>

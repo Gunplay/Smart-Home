@@ -21,7 +21,6 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     //quantitty,
   } = product;
 
-  console.log('prod', product);
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
