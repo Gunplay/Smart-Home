@@ -18,9 +18,6 @@ export interface Products {
 }
 
 export interface ProductsSlice {
-  map(
-    arg0: (item: Products) => import('react/jsx-runtime').JSX.Element
-  ): import('react').ReactNode;
   items: Products[];
   status: Status;
 }
