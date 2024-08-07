@@ -1,17 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchProducts } from './asyncActions';
-import { Products } from './type';
+import { Products, ProductsSlice, Status } from './type';
 
-interface ProductsState {
-  data: Products[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  error: string | null;
-}
-
-const initialState: ProductsState = {
-  data: [],
-  status: 'idle',
-  error: null,
+const initialState: ProductsSlice = {
+  items: [],
+  status: Status.LOADING,
 };
 
 const productsSlice = createSlice({
@@ -19,21 +12,20 @@ const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: builder => {
-    builder
-      .addCase(fetchProducts.pending, state => {
-        state.status = 'loading';
-      })
-      .addCase(
-        fetchProducts.fulfilled,
-        (state, action: PayloadAction<Products[]>) => {
-          state.status = 'succeeded';
-          state.data = action.payload;
-        }
-      )
-      .addCase(fetchProducts.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message || 'Something went wrong';
-      });
+    builder.addCase(fetchProducts.pending, state => {
+      state.status = Status.LOADING;
+    });
+    builder.addCase(
+      fetchProducts.fulfilled,
+      (state, action: PayloadAction<Products[]>) => {
+        state.status = Status.SUCCESS;
+        state.items = action.payload;
+      }
+    );
+    builder.addCase(fetchProducts.rejected, state => {
+      state.status = Status.ERROR;
+      state.items = [];
+    });
   },
 });
 

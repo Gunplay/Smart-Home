@@ -6,10 +6,7 @@ export enum Status {
 }
 
 export interface Products {
-  length: number;
-  map(
-    arg0: (item: Products) => import('react/jsx-runtime').JSX.Element
-  ): import('react').ReactNode;
+  //length: number;
   name: string;
   internalCode: number;
   price: number;
@@ -21,7 +18,6 @@ export interface Products {
 }
 
 export interface ProductsSlice {
-  data: any;
   map(
     arg0: (item: Products) => import('react/jsx-runtime').JSX.Element
   ): import('react').ReactNode;

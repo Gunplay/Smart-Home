@@ -6,45 +6,21 @@ import { Products } from '../../redux/products/type';
 import { useAppSelector } from '../../redux/store';
 import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
-const ProductsList = () => {
-  //const dispatch = useAppDispatch()
 
+const ProductsList = () => {
   const dispatch = useDispatch();
-  const { data: products, status } = useAppSelector(state => state.products);
+  const data = useAppSelector(state => state.products.items);
+
+  console.log('prod', data);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  if (status === 'loading') {
+  if (!Array.isArray(data)) {
+    console.error('Data is not an array:', data);
     return <div>Loading...</div>;
   }
-
-  if (status === 'failed') {
-    return <div>Failed to load products</div>;
-  }
-  // const {
-  //   data: products,
-  //   error,
-  //   isLoading,
-  // } = productsApi.useFetchProductsQuery();
-
-  // console.log('Fetched Products:', data); // Debugging log
-
-  // if (isLoading) {
-  //   console.log('Loading products...');
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (error) {
-  //   console.error('Error loading products:', error);
-  //   return <div>Error loading products</div>;
-  // }
-
-  // if (!products || products.length === 0) {
-  //   console.log('No products found');
-  //   return <div>No products available</div>;
-  // }
 
   return (
     <>
@@ -58,7 +34,7 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {products.map((item: Products) => (
+        {data.map((item: Products) => (
           <div key={item.id} className={styles.productsContainer}>
             <ProductCard product={item} />
           </div>
