@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import Home from '../../pages/Home';
+import ProductPage from '../../pages/ProductPage';
 import Register from '../Form/Register';
 import SignIn from '../Form/SignIn';
 import Page404 from '../Page404';
@@ -17,6 +18,7 @@ const routes: RouteObject[] = [
     path: '/sign-in',
     element: <SignIn />,
   },
+  { path: '/product-page', element: <ProductPage /> },
   {
     path: '*', // This will match any route not matched by the above routes
     element: <Page404 />,

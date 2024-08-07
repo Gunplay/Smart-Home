@@ -1,5 +1,6 @@
 //import { useEffect } from 'react';
 //import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
 //import { fetchProducts } from '../../redux/products/asyncActions';
 import { Products } from '../../redux/products/type';
@@ -38,9 +39,11 @@ const ProductsList = () => {
       </div>
       <div className={styles.productsListWrapper}>
         {products?.map((item: Products) => (
-          <div key={item.id} className={styles.productsContainer}>
-            <ProductCard product={item} />
-          </div>
+          <Link to={`http://dev.smarthome-team.store/api/products/${item.id}`}>
+            <div key={item.id} className={styles.productsContainer}>
+              <ProductCard product={item} />
+            </div>
+          </Link>
         ))}
       </div>
     </>
