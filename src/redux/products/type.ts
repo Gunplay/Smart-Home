@@ -6,6 +6,9 @@ export enum Status {
 }
 
 export interface Products {
+  map(
+    arg0: (item: Products) => import('react/jsx-runtime').JSX.Element
+  ): import('react').ReactNode;
   //length: number;
   name: string;
   internalCode: number;
