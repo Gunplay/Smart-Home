@@ -1,22 +1,25 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+//import { useEffect } from 'react';
+//import { useDispatch, useSelector } from 'react-redux';
 import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
-import { fetchProducts } from '../../redux/products/asyncActions';
+//import { fetchProducts } from '../../redux/products/asyncActions';
 import { Products } from '../../redux/products/type';
-import { AppDispatch } from '../../redux/store';
+//import { AppDispatch } from '../../redux/store';
+import { productsApi } from '../../redux/services/GetProducts';
 import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
 const ProductsList = () => {
   //const dispatch = useAppDispatch()
 
-  const dispatch = useDispatch<AppDispatch>();
-  const products = useSelector(
-    (state: { products: { items: Products } }) => state.products.items
-  );
-  console.log('prod', products);
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+  //const dispatch = useDispatch<AppDispatch>();
+  // const products = useSelector(
+  //   (state: { products: { items: Products } }) => state.products.items
+  // );
+  const { data: products } = productsApi.useFetchProductsQuery();
+  console.log('products', products);
+  //console.log('productsRTK', products);
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
 
   return (
     <>
@@ -30,7 +33,7 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {products.map((item: Products) => (
+        {products?.map((item: Products) => (
           <div key={item.id} className={styles.productsContainer}>
             <ProductCard product={item} />
           </div>
