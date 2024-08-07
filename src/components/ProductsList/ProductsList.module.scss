@@ -153,35 +153,35 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .productsListWrapper {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+// @media (max-width: 1200px) {
+//   .productsListWrapper {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
 
-@media (max-width: 960px) {
-  .productsListWrapper {
-    grid-template-columns: repeat(
-      4,
-      1fr
-    ); /* 3 елементи у рядку для екранів до 960px */
-  }
-}
+// @media (max-width: 960px) {
+//   .productsListWrapper {
+//     grid-template-columns: repeat(
+//       4,
+//       1fr
+//     ); /* 3 елементи у рядку для екранів до 960px */
+//   }
+// }
 
-@media (max-width: 720px) {
-  .productsListWrapper {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* 2 елементи у рядку для екранів до 720px */
-  }
-}
+// @media (max-width: 720px) {
+//   .productsListWrapper {
+//     grid-template-columns: repeat(
+//       3,
+//       1fr
+//     ); /* 2 елементи у рядку для екранів до 720px */
+//   }
+// }
 
-@media (max-width: 480px) {
-  .productsListWrapper {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 1 елемент у рядку для екранів до 480px */
-  }
-}
+// @media (max-width: 480px) {
+//   .productsListWrapper {
+//     grid-template-columns: repeat(
+//       2,
+//       1fr
+//     ); /* 1 елемент у рядку для екранів до 480px */
+//   }
+// }
