@@ -1,24 +1,15 @@
 .productsListWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-  // gap: 40px;
-  // display: grid;
-  // grid-template-columns: repeat(
-  //   auto-fill,
-  //   minmax(200px, 10px)
-  // );
-  //gap: 20px;
-
   justify-content: center;
   align-items: center;
-  width: 1280px;
+  width: 100%; /* Change width to 100% */
+  max-width: 1280px; /* Add max-width */
   margin: auto;
   padding: 20px 70px 80px 0px;
-  gap: 2rem; /* Adjust the gap between categories as needed */
+  gap: 2rem;
   background-color: #e6f0f0;
 }
-
 .categorySection {
   width: 1200px;
   //gap: 40px;
@@ -152,36 +143,26 @@
 .buttonNextProductsImage {
   cursor: pointer;
 }
+@media (max-width: 1200px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-// @media (max-width: 1200px) {
-//   .productsListWrapper {
-//     grid-template-columns: repeat(4, 1fr);
-//   }
-// }
+@media (max-width: 960px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(3, 1fr); /* Adjusted to 3 items */
+  }
+}
 
-// @media (max-width: 960px) {
-//   .productsListWrapper {
-//     grid-template-columns: repeat(
-//       4,
-//       1fr
-//     ); /* 3 елементи у рядку для екранів до 960px */
-//   }
-// }
+@media (max-width: 720px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(2, 1fr); /* Adjusted to 2 items */
+  }
+}
 
-// @media (max-width: 720px) {
-//   .productsListWrapper {
-//     grid-template-columns: repeat(
-//       3,
-//       1fr
-//     ); /* 2 елементи у рядку для екранів до 720px */
-//   }
-// }
-
-// @media (max-width: 480px) {
-//   .productsListWrapper {
-//     grid-template-columns: repeat(
-//       2,
-//       1fr
-//     ); /* 1 елемент у рядку для екранів до 480px */
-//   }
-// }
+@media (max-width: 480px) {
+  .productsListWrapper {
+    grid-template-columns: repeat(1, 1fr); /* Adjusted to 1 item */
+  }
+}
