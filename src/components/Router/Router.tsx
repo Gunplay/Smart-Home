@@ -18,7 +18,10 @@ const routes: RouteObject[] = [
     path: '/sign-in',
     element: <SignIn />,
   },
-  { path: '/product-page', element: <ProductPage /> },
+  {
+    path: '/product-page/:id',
+    element: <ProductPage />,
+  },
   {
     path: '*', // This will match any route not matched by the above routes
     element: <Page404 />,

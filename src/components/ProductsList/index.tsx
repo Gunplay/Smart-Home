@@ -15,11 +15,19 @@ const ProductsList = () => {
   // const products = useSelector(
   //   (state: { products: { items: Products } }) => state.products.items
   // );
-  const { data: products, error } = productsApi.useFetchProductsQuery();
-  console.log('products', products);
+
+  const {
+    data: products,
+    error,
+    isLoading,
+  } = productsApi.useFetchProductsQuery();
+
+  if (isLoading) {
+    return <div>Loading products...</div>;
+  }
 
   if (error) {
-    return <div>error PRODUCTS</div>;
+    return <div>Error loading products</div>;
   }
   //console.log('productsRTK', products);
   // useEffect(() => {
@@ -39,8 +47,8 @@ const ProductsList = () => {
       </div>
       <div className={styles.productsListWrapper}>
         {products?.map((item: Products) => (
-          <Link to={`http://dev.smarthome-team.store/api/products/${item.id}`}>
-            <div key={item.id} className={styles.productsContainer}>
+          <Link to={`/product-page/${item.id}`} key={item.id}>
+            <div className={styles.productsContainer}>
               <ProductCard product={item} />
             </div>
           </Link>
