@@ -3,13 +3,13 @@ import { productsApi } from '../../redux/services/GetProducts';
 import styles from './ProductPage.module.scss';
 
 const ProductPage = () => {
-  const { id } = useParams<string | undefined>();
+  const { id } = useParams();
   const {
     data: product,
     error,
     isLoading,
   } = productsApi.useFetchProductByIdQuery(id || '');
-
+  console.log('product', product);
   if (isLoading) {
     return <div>Loading product...</div>;
   }
