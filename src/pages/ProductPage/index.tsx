@@ -26,13 +26,45 @@ const ProductPage = () => {
     <div className={styles.Container}>
       <div className={styles.WrapperProductPage}>
         <div className={styles.ProductImage}>
-          {/* Замени placeholder на изображение продукта */}
-          <img src={product.imageUrl} alt={product.name} />
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.MainImage}
+          />
         </div>
         <div className={styles.ProductDetails}>
-          <h1>{product.name}</h1>
-          <p>{product.description}</p>
-          {/* Добавьте другие детали о продукте */}
+          <h1 className={styles.ProductName}>{product.name}</h1>
+          <p className={styles.ProductDescription}>{product.description}</p>
+        </div>
+      </div>
+      <div className={styles.SubImageWrapper}>
+        <div className={styles.WrapperSubImage}>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.SubImage}
+          />
+        </div>
+        <div className={styles.WrapperSubImage}>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.SubImage}
+          />
+        </div>
+        <div className={styles.WrapperSubImage}>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.SubImage}
+          />
+        </div>
+        <div className={styles.WrapperSubImage}>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.SubImage}
+          />
         </div>
       </div>
     </div>
