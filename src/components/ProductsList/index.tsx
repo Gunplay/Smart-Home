@@ -17,11 +17,12 @@ const ProductsList = () => {
   // );
 
   const {
-    data: products,
+    data: products = [],
     error,
     isLoading,
   } = productsApi.useFetchProductsQuery();
-
+  const { result } = products;
+  console.log('products', products);
   if (isLoading) {
     return <div>Loading products...</div>;
   }
@@ -46,10 +47,10 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {products?.map((item: Products) => (
-          <Link to={`/product-page/${item.id}`} key={item.id}>
+        {result.map((product: Products) => (
+          <Link to={`/product-page/${product.id}`} key={product.id}>
             <div className={styles.productsContainer}>
-              <ProductCard product={item} />
+              <ProductCard product={product} />
             </div>
           </Link>
         ))}
