@@ -3,7 +3,7 @@ import { fetchProducts } from './asyncActions';
 import { Products, ProductsSlice, Status } from './type';
 
 const initialState: ProductsSlice = {
-  items: [],
+  result: [],
   status: Status.LOADING,
 };
 
@@ -19,12 +19,12 @@ const productsSlice = createSlice({
       fetchProducts.fulfilled,
       (state, action: PayloadAction<Products[]>) => {
         state.status = Status.SUCCESS;
-        state.items = action.payload;
+        state.result = action.payload;
       }
     );
     builder.addCase(fetchProducts.rejected, state => {
       state.status = Status.ERROR;
-      state.items = [];
+      state.result = [];
     });
   },
 });
