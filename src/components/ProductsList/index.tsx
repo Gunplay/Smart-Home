@@ -21,7 +21,15 @@ const ProductsList = () => {
     error,
     isLoading,
   } = productsApi.useFetchProductsQuery();
-  const { result } = products;
+
+  let resultData: Products[] = [];
+
+  if ('result' in products) {
+    resultData = products.result as Products[];
+  } else {
+    console.log("Doesn't result field in the object");
+  }
+
   console.log('products', products);
   if (isLoading) {
     return <div>Loading products...</div>;
@@ -47,7 +55,7 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {result.map((product: Products) => (
+        {resultData.map((product: Products) => (
           <Link to={`/product-page/${product.id}`} key={product.id}>
             <div className={styles.productsContainer}>
               <ProductCard product={product} />
