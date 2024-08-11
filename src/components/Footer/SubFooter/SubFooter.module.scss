@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
+
 .SubFooter {
   width: 1280px;
   min-height: 150px;
@@ -37,4 +39,10 @@
   .SubFooter {
     grid-template-columns: 1fr;
   }
+}
+
+.gap {
+  width: 1280px;
+  height: 76px;
+  background: #faf5ea;
 }

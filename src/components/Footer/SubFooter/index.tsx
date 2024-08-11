@@ -28,6 +28,7 @@ const SubFooter: FC = () => {
           </div>
         ))}
       </div>
+      <div className={styles.gap}></div>
     </div>
   );
 };

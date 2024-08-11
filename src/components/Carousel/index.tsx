@@ -1,9 +1,9 @@
 import { SetStateAction, useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import styles from './Slider.module.scss';
-import slideOne from '/src/assets/slider-1.jpg';
-import slideTwo from '/src/assets/slider-2.jpg';
-import slideThree from '/src/assets/slider-3.jpg';
+import slideOne from '/src/assets/slider-1.png';
+import slideTwo from '/src/assets/slider-1.png';
+import slideThree from '/src/assets/slider-1.png';
 
 const slides = [
   {
