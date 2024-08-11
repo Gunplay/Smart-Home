@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import NavigationBar from '../../components/NewHeader/NavigationBar';
 import { productsApi } from '../../redux/services/GetProducts';
 import styles from './ProductPage.module.scss';
 
@@ -23,51 +25,55 @@ const ProductPage = () => {
   }
 
   return (
-    <div className={styles.Container}>
-      <div className={styles.WrapperProductPage}>
-        <div className={styles.ProductImage}>
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={styles.MainImage}
-          />
+    <>
+      <NavigationBar />
+      <Header />
+      <div className={styles.Container}>
+        <div className={styles.WrapperProductPage}>
+          <div className={styles.ProductImage}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className={styles.MainImage}
+            />
+          </div>
+          <div className={styles.ProductDetails}>
+            <h1 className={styles.ProductName}>{product.name}</h1>
+            <p className={styles.ProductDescription}>{product.description}</p>
+          </div>
         </div>
-        <div className={styles.ProductDetails}>
-          <h1 className={styles.ProductName}>{product.name}</h1>
-          <p className={styles.ProductDescription}>{product.description}</p>
+        <div className={styles.SubImageWrapper}>
+          <div className={styles.WrapperSubImage}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className={styles.SubImage}
+            />
+          </div>
+          <div className={styles.WrapperSubImage}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className={styles.SubImage}
+            />
+          </div>
+          <div className={styles.WrapperSubImage}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className={styles.SubImage}
+            />
+          </div>
+          <div className={styles.WrapperSubImage}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className={styles.SubImage}
+            />
+          </div>
         </div>
       </div>
-      <div className={styles.SubImageWrapper}>
-        <div className={styles.WrapperSubImage}>
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={styles.SubImage}
-          />
-        </div>
-        <div className={styles.WrapperSubImage}>
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={styles.SubImage}
-          />
-        </div>
-        <div className={styles.WrapperSubImage}>
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={styles.SubImage}
-          />
-        </div>
-        <div className={styles.WrapperSubImage}>
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={styles.SubImage}
-          />
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
