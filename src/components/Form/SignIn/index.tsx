@@ -2,6 +2,7 @@ import buttonReg from '../../../assets/ButtonsSmartHome/buttonReg.svg';
 
 import Button from '../../Button';
 import ExitIconForm from '../ExitIconForm';
+import { Link } from 'react-router-dom';
 import styles from './SignInForm.module.scss';
 
 const SignIn = () => {
@@ -37,9 +38,11 @@ const SignIn = () => {
               <Button className={styles.buttonRegisterPhone}>
                 Увійти по номеру телефону
               </Button>
-              <Button>
-                <img src={buttonReg}></img>
-              </Button>
+              <Link to={'/register'}>
+                <Button>
+                  <img src={buttonReg}></img>
+                </Button>
+              </Link>
             </div>
           </div>
         </form>

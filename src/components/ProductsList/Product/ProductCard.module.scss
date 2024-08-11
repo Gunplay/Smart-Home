@@ -2,7 +2,6 @@
   border-radius: 24px;
   padding: 10px;
   width: 200px;
-  height: 280px;
   min-width: 180px;
   max-width: 260px;
   background: #fff;
@@ -15,19 +14,23 @@
   flex-direction: column;
   gap: 12px;
 }
+
 .imageWrapper {
   position: relative;
 }
+
 .productImage {
   width: 100%;
   height: 115px;
 }
+
 .iconHeart {
   position: absolute;
   top: 8px;
   right: 8px;
   cursor: pointer;
 }
+
 .arrowLeft,
 .arrowRight {
   position: absolute;
@@ -46,6 +49,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .arrowLeft {
   position: absolute;
   background: none;
@@ -61,16 +65,23 @@
 }
 
 .productName {
-  font-size: 16px;
+  height: 48px;
   margin: 10px 0;
+
+  &>h3 {
+    font-family: "Jura", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #393939;
+  }
 }
+
 .gridContainer {
   width: 180px;
-  height: 39px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
-  padding: 32px 10px 10px 10px;
+  padding: 10px;
 }
 
 .ratingContainer {
@@ -107,4 +118,23 @@
   font-size: 16px;
   font-weight: bold;
   color: #000;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  &>button {
+    border-radius: 14px;
+    padding: 10px 20px;
+    width: 129px;
+    height: 39px;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(270deg, #ff9e9e 0%, #fadc93 100%);
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #393939;
+  }
 }

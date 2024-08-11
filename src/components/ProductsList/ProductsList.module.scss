@@ -3,19 +3,23 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
   align-items: center;
-  width: 100%; /* Change width to 100% */
-  max-width: 1280px; /* Add max-width */
+  width: 100%;
+  /* Change width to 100% */
+  max-width: 1280px;
+  /* Add max-width */
   margin: auto;
   padding: 20px 70px 80px 0px;
   gap: 2rem;
-  background-color: #e6f0f0;
+  background-color: #faf5ea;
 }
+
 .categorySection {
   width: 1200px;
   //gap: 40px;
 
   margin: 0px 40px 0px 60px;
 }
+
 .wrapperHeaderProducts {
   display: flex;
   justify-content: space-between;
@@ -23,9 +27,11 @@
   width: 1200px;
   height: 44px;
 }
+
 .categoryTitle {
   //margin: 0px 0px 0px 40px;
-  margin-bottom: 1rem; /* Space below category title */
+  margin-bottom: 1rem;
+  /* Space below category title */
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -41,7 +47,8 @@
 }
 
 .card {
-  width: calc(25% - 1rem); /* Adjust the width of the product card */
+  width: calc(25% - 1rem);
+  /* Adjust the width of the product card */
 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -53,7 +60,8 @@
   position: relative;
   width: 100%;
 
-  padding-top: 75%; /* Adjust this to maintain the aspect ratio */
+  padding-top: 75%;
+  /* Adjust this to maintain the aspect ratio */
   //overflow: hidden;
 
   border-radius: 0.5rem;
@@ -124,22 +132,26 @@
 .reviews {
   color: #555;
 }
+
 .ContainerButtonPanel {
   width: 1280px;
   display: grid;
   margin: auto;
-  background-color: #e6f0f0;
+  background-color: #faf5ea;
   grid-template-columns: repeat(1, 200px);
   justify-content: end;
   //padding: 0px 20px 0px 0px;
 }
+
 .buttonNextProducts {
   display: grid;
   justify-content: center;
 }
+
 .buttonNextProductsImage {
   cursor: pointer;
 }
+
 @media (max-width: 1200px) {
   .productsListWrapper {
     grid-template-columns: repeat(4, 1fr);
@@ -148,18 +160,21 @@
 
 @media (max-width: 960px) {
   .productsListWrapper {
-    grid-template-columns: repeat(3, 1fr); /* Adjusted to 3 items */
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjusted to 3 items */
   }
 }
 
 @media (max-width: 720px) {
   .productsListWrapper {
-    grid-template-columns: repeat(2, 1fr); /* Adjusted to 2 items */
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjusted to 2 items */
   }
 }
 
 @media (max-width: 480px) {
   .productsListWrapper {
-    grid-template-columns: repeat(1, 1fr); /* Adjusted to 1 item */
+    grid-template-columns: repeat(1, 1fr);
+    /* Adjusted to 1 item */
   }
 }

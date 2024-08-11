@@ -54,7 +54,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           </button>
         </div>
       </div>
-      <h3 className={styles.productName}>{name.substring(0, 25)}</h3>
+      <div className={styles.productName}>
+        <h3>{name.substring(0, 25)}</h3>
+      </div>
       <div className={styles.gridContainer}>
         <div className={styles.ratingContainer}>
           <span className={styles.rating}>★★★★☆</span>
@@ -64,6 +66,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.oldPrice}>{price}</span>
           <span className={styles.newPrice}>{price}</span>
         </div>
+      </div>
+      <div className={styles.button}>
+        <button>До кошика</button>
       </div>
     </div>
   );
