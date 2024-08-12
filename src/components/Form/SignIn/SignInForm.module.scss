@@ -59,9 +59,16 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: rem(40);
+  gap: rem(15);
 }
-
+.WrapperIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FaceBookIcon {
+  margin-right: 50px;
+}
 .buttonRegisterPhone {
   background-color: #afc1e7;
   color: black;

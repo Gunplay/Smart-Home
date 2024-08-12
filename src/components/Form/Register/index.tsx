@@ -26,7 +26,6 @@ const RegisterForm = () => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Handle form submission logic here
-  
   };
 
   return (
@@ -83,7 +82,11 @@ const RegisterForm = () => {
               required
             />
           </div>
-
+          <div className={styles.submitButtonContainer}>
+            <button type="submit" className={styles.submitButton}>
+              Зареєструватися
+            </button>
+          </div>
           <div className={styles.formGroup}>
             <label className={styles.formCheckboxLabel}>
               <input
@@ -98,11 +101,6 @@ const RegisterForm = () => {
                 про новини та знижки
               </span>
             </label>
-          </div>
-          <div className={styles.submitButtonContainer}>
-            <button type="submit" className={styles.submitButton}>
-              Зареєструватися
-            </button>
           </div>
         </form>
         <p className={styles.formFooter}>

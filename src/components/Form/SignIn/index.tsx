@@ -1,8 +1,10 @@
 import buttonReg from '../../../assets/ButtonsSmartHome/buttonReg.svg';
 
+import { Link } from 'react-router-dom';
+import FaceBook from '../../../assets/iconsRegister/faceboock.svg';
+import Google from '../../../assets/iconsRegister/google.svg';
 import Button from '../../Button';
 import ExitIconForm from '../ExitIconForm';
-import { Link } from 'react-router-dom';
 import styles from './SignInForm.module.scss';
 
 const SignIn = () => {
@@ -14,7 +16,7 @@ const SignIn = () => {
         </div>
         <h2 className={styles.formTitle}>Вхід</h2>
         <form>
-          <div className={styles.formGroup}>
+          {/* <div className={styles.formGroup}>
             <input
               type="text"
               name="firstNameAndSurname"
@@ -22,7 +24,7 @@ const SignIn = () => {
               placeholder="Ім'я та призвіще"
               className={styles.formInput}
             ></input>
-          </div>
+          </div> */}
           <div className={styles.formGroup}>
             <input
               placeholder="Eлектронна пошта"
@@ -32,17 +34,24 @@ const SignIn = () => {
           <div className={styles.formGroup}>
             <input placeholder="Пароль" className={styles.formInput}></input>
           </div>
-          <div className={styles.formText}>Або</div>
           <div className={styles.formGroup}>
             <div className={styles.buttonRegContainer}>
-              <Button className={styles.buttonRegisterPhone}>
-                Увійти по номеру телефону
-              </Button>
+              <Button className={styles.buttonRegisterPhone}>Увійти</Button>
+              <div className={styles.formText}>Або увійти через</div>
+              <div className={styles.WrapperIcons}>
+                <div className={styles.FaceBookIcon}>
+                  <img src={FaceBook} alt="FaceBook" />
+                </div>
+                <div className={styles.GoogleIcon}>
+                  <img src={Google} alt="Google" />
+                </div>
+              </div>
               <Link to={'/register'}>
                 <Button>
                   <img src={buttonReg}></img>
                 </Button>
               </Link>
+              <div>Забули пароль? Відновити</div>
             </div>
           </div>
         </form>
