@@ -1,16 +1,11 @@
-/* src/components/NavigationBar.css */
 .navbar {
   width: 1280px;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: #a9e4ff;
-  /* Light blue background color */
   padding: 10px 40px;
-  /* width: auto; */
   margin: auto;
-  /* border-radius: 10px; */
   box-shadow: 0 2px 6px 2px rgba(199, 169, 156, 0.15), 0 1px 2px 0 rgba(251, 241, 214, 0.25);
   background: #393939;
 }
@@ -101,9 +96,7 @@
 }
 
 .navbar_links a {
-  // text-decoration: none;
-  // color: #d19087;
-  /* Light brown color */
+
 }
 
 .navbar_auth {
@@ -114,9 +107,9 @@
   gap: 10px;
   border-radius: 20px;
   padding: 10px 20px;
-  width: 284px;
+  width: 135px;
   height: 44px;
-  background: #a8dbaa;
+  background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
 }
 
 .auth {
@@ -149,6 +142,5 @@
 }
 
 .auth_button::before {
-  // content: '👤';
-  /* User icon */
+
 }

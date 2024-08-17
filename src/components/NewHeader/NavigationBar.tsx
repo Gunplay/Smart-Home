@@ -72,7 +72,7 @@ const NavigationBar: React.FC = () => {
             <Link to={'/sign-in'}>Увійти</Link>/
             <Link to={'/register'}>зареєструватися</Link>
           </button> */}
-            <p className={styles.text}>Увійти/зареєструватися</p>
+            <p className={styles.text}>Увійти</p>
             <svg
               width="24"
               height="24"
