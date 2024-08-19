@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
 //import { fetchProducts } from '../../redux/products/asyncActions';
-import { Products } from '../../redux/products/type';
+import { Product } from '../../redux/products/type';
 //import { AppDispatch } from '../../redux/store';
 import { productsApi } from '../../redux/services/GetProducts';
 import ProductCard from './Product';
@@ -22,15 +22,15 @@ const ProductsList = () => {
     isLoading,
   } = productsApi.useFetchProductsQuery();
 
-  let resultData: Products[] = [];
+  const productsItem = products?.data;
 
-  if ('result' in products) {
-    resultData = products.result as Products[];
-  } else {
-    console.log("Doesn't result field in the object");
-  }
+  // let resultData: Product[] = [];
+  // if ('result' in products) {
+  //   resultData = products?.data;
+  // } else {
+  //   console.log("Doesn't result field in the object");
+  // }
 
-  console.log('products', products);
   if (isLoading) {
     return <div>Loading products...</div>;
   }
@@ -55,8 +55,11 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {resultData.map((product: Products) => (
-          <Link to={`/product-page/${product.id}`} key={product.id}>
+        {productsItem.map((product: Product) => (
+          <Link
+            to={`/product-page/${product.productId}`}
+            key={product.productId}
+          >
             <div className={styles.productsContainer}>
               <ProductCard product={product} />
             </div>

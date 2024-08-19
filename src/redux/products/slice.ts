@@ -4,13 +4,18 @@ import { Products, ProductsSlice, Status } from './type';
 
 const initialState: ProductsSlice = {
   result: [],
+  itemCount: 0,
   status: Status.LOADING,
 };
 
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    setIncreaseProducts: (state, action) => {
+      state.itemCount = action.payload.itemCount + 1;
+    },
+  },
   extraReducers: builder => {
     builder.addCase(fetchProducts.pending, state => {
       state.status = Status.LOADING;
@@ -28,5 +33,7 @@ const productsSlice = createSlice({
     });
   },
 });
+
+export const { setIncreaseProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

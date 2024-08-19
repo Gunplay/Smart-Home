@@ -2,10 +2,10 @@
   width: 1280px;
 
   display: grid;
-  background: #f7e6c8;
+  background: #faf5ea;
   margin: auto;
 
-  padding: 20px 20px 20px 20px;
+  padding: 20px 40px 20px 40px;
 }
 
 .WrapperProductPage {
@@ -36,7 +36,23 @@
   width: 121px;
   height: 113px;
 }
-
+.wrapperBoard {
+  background: #fff;
+  border-radius: 40px;
+  //margin-right: 40px;
+  padding: 20px;
+  width: 600px;
+  height: 229px;
+}
+.wrapperOption {
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: flex-start;
+  // flex-direction: row;
+  // gap: 22px;
+  // width: 600px;
+  // height: 83px;
+}
 .ProductName {
   font-family: 'Jura', sans-serif;
   font-weight: 700;
@@ -46,5 +62,5 @@
 .ProductDetails {
   width: 600px;
   height: 200px;
-  overflow: auto;
+  // overflow: auto;
 }
