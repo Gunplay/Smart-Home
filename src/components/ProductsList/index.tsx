@@ -9,27 +9,11 @@ import { productsApi } from '../../redux/services/GetProducts';
 import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
 const ProductsList = () => {
-  //const dispatch = useAppDispatch()
-
-  //const dispatch = useDispatch<AppDispatch>();
-  // const products = useSelector(
-  //   (state: { products: { items: Products } }) => state.products.items
-  // );
-
   const {
-    data: products = [],
+    data: productsResponse,
     error,
     isLoading,
   } = productsApi.useFetchProductsQuery();
-
-  const productsItem = products?.data;
-
-  // let resultData: Product[] = [];
-  // if ('result' in products) {
-  //   resultData = products?.data;
-  // } else {
-  //   console.log("Doesn't result field in the object");
-  // }
 
   if (isLoading) {
     return <div>Loading products...</div>;
@@ -38,10 +22,12 @@ const ProductsList = () => {
   if (error) {
     return <div>Error loading products</div>;
   }
-  //console.log('productsRTK', products);
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, [dispatch]);
+
+  if (!productsResponse || !productsResponse?.data) {
+    return <div>No products available</div>;
+  }
+
+  const products = productsResponse.data;
 
   return (
     <>
@@ -55,7 +41,7 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {productsItem.map((product: Product) => (
+        {products.map((product: Product) => (
           <Link
             to={`/product-page/${product.productId}`}
             key={product.productId}

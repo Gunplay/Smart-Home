@@ -1,6 +1,8 @@
+import { Key } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import NavigationBar from '../../components/NewHeader/NavigationBar';
+import { Category, Characteristic } from '../../redux/products/type';
 import { productsApi } from '../../redux/services/GetProducts';
 import styles from './ProductPage.module.scss';
 
@@ -84,22 +86,30 @@ const ProductPage = () => {
         {/* Sub Images */}
         <div className={styles.SubImageWrapper}>
           {images &&
-            images.slice(1, 5).map((image, index) => (
-              <div className={styles.WrapperSubImage} key={index}>
-                <img
-                  src={image.imageUrl}
-                  alt={image.title}
-                  className={styles.SubImage}
-                />
-              </div>
-            ))}
+            images.slice(1, 5).map(
+              (
+                image: {
+                  imageUrl: string | undefined;
+                  title: string | undefined;
+                },
+                index: Key | null | undefined
+              ) => (
+                <div className={styles.WrapperSubImage} key={index}>
+                  <img
+                    src={image.imageUrl}
+                    alt={image.title}
+                    className={styles.SubImage}
+                  />
+                </div>
+              )
+            )}
         </div>
 
         {/* Characteristics and Categories */}
         <div className={styles.Characteristics}>
           <h3>Characteristics:</h3>
           <ul>
-            {characteristics.map(char => (
+            {characteristics.map((char: Characteristic) => (
               <li key={char.characteristicId}>
                 <strong>{char.productCharacteristicName}:</strong>{' '}
                 {char.productCharacteristicDescription}
@@ -111,7 +121,7 @@ const ProductPage = () => {
         <div className={styles.Categories}>
           <h3>Categories:</h3>
           <ul>
-            {categories.map(category => (
+            {categories.map((category: Category) => (
               <li key={category.categoryId}>{category.categoryName}</li>
             ))}
           </ul>

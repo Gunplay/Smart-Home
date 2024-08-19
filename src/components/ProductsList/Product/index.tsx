@@ -11,19 +11,19 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const {
-    categories,
-    characteristics,
+    // categories,
+    // characteristics,
     images,
-    isAvailable,
-    priceWithDiscount,
-    productCode,
-    productDescription,
+    // isAvailable,
+    // priceWithDiscount,
+    // productCode,
+    // productDescription,
     productDiscount,
-    productId,
+    // productId,
     productName,
     productPrice,
-    productUrl,
-    quantityInStock,
+    // productUrl,
+    // quantityInStock,
   } = product;
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);

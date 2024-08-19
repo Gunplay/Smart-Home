@@ -4,9 +4,14 @@ export enum Status {
   SUCCESS = 'completed',
   ERROR = 'error',
 }
-
+export interface Category {
+  categoryId: number;
+  categoryName: string;
+  url?: string; // Optional since it's not visible in the screenshot
+  isSubCategory?: boolean; // Optional since it's not visible in the screenshot
+  products?: Product[]; // Optional since it's not visible in the screenshot
+}
 // src/redux/products/type.ts
-
 export interface Image {
   filename: string;
   fileExtension: string;
@@ -24,30 +29,25 @@ export interface Characteristic {
 }
 
 export interface Product {
+  categories: Category[];
+  characteristics: Characteristic[];
+  images: Image[];
+  isAvailable: boolean;
+  priceWithDiscount: number;
+  productCode: number;
+  productDescription: string;
+  productDiscount: number;
   productId: number;
   productName: string;
-  productCode: number;
   productPrice: number;
-  productDiscount: number;
-  priceWithDiscount: number;
-  isAvailable: boolean;
+  productUrl?: string;
   quantityInStock: number;
-  productUrl: string;
-  productDescription: string;
-  categories: string[];
-  images: Image[];
-  characteristics: Characteristic[];
 }
 
-export interface Category {
-  categoryId: number;
-  categoryName: string;
-  url: string;
-  isSubCategory: boolean;
-  products: Product[];
-}
-
-export interface ApiResponse {
-  data: Category[];
+export interface ProductsApiResponse {
+  data: Product[];
   isSuccess: boolean;
 }
+
+// export type ProductsApiResponse = ApiResponse<Product[]>; // API response with array of products
+// export type ProductApiResponse = ApiResponse<Product>; // API response for a single product
