@@ -13,7 +13,7 @@ const ProductPage = () => {
     error,
     isLoading,
   } = productsApi.useFetchProductByIdQuery(id || '');
-
+  console.log('productResponse PAGE', productResponse);
   if (isLoading) {
     return <div>Loading product...</div>;
   }

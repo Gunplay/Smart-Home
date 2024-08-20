@@ -49,6 +49,11 @@ export interface ProductsApiResponse {
   isSuccess: boolean;
 }
 
+export interface ProductApiRes {
+  data: Product;
+  isSuccess: boolean;
+  message: string;
+}
 export interface InitProductsState {
   result: Product[];
 
