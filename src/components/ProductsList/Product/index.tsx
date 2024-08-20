@@ -56,6 +56,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             {images.map(item => {
               return (
                 <img
+                  key={item.productId}
                   src={item.imageUrl}
                   //     src={imageUrl[currentImageIndex]}
                   //alt={'product'}

@@ -15,6 +15,7 @@ const ProductsList = () => {
     isLoading,
   } = productsApi.useFetchProductsQuery();
 
+  console.log('productsResponse', productsResponse);
   if (isLoading) {
     return <div>Loading products...</div>;
   }
@@ -23,7 +24,7 @@ const ProductsList = () => {
     return <div>Error loading products</div>;
   }
 
-  if (!productsResponse || !productsResponse?.data) {
+  if (!productsResponse || !productsResponse.data) {
     return <div>No products available</div>;
   }
 
