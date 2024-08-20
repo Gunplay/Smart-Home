@@ -78,7 +78,6 @@ const NavigationBar: React.FC = () => {
             <Link to={'/register'}>
               <button>/Зареєструватися</button>
             </Link>
-            {/* Увійти/зареєструватися */}
           </p>
           <svg
             width="24"
