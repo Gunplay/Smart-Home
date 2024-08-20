@@ -75,9 +75,7 @@ const NavigationBar: React.FC = () => {
             <Link to={'/sign-in'}>
               <button>Увійти</button>
             </Link>
-            <Link to={'/register'}>
-              <button>/Зареєструватися</button>
-            </Link>
+
             {/* Увійти/зареєструватися */}
           </p>
           <svg
