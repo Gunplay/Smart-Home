@@ -1,28 +1,24 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchProducts } from './asyncActions';
-import { Products, ProductsSlice, Status } from './type';
+import { InitProductsState, Product, Status } from './type';
 
-const initialState: ProductsSlice = {
+const initialState: InitProductsState = {
   result: [],
-  itemCount: 0,
+
   status: Status.LOADING,
 };
 
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {
-    setIncreaseProducts: (state, action) => {
-      state.itemCount = action.payload.itemCount + 1;
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchProducts.pending, state => {
       state.status = Status.LOADING;
     });
     builder.addCase(
       fetchProducts.fulfilled,
-      (state, action: PayloadAction<Products[]>) => {
+      (state, action: PayloadAction<Product[]>) => {
         state.status = Status.SUCCESS;
         state.result = action.payload;
       }
@@ -33,7 +29,5 @@ const productsSlice = createSlice({
     });
   },
 });
-
-export const { setIncreaseProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

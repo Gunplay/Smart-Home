@@ -49,5 +49,10 @@ export interface ProductsApiResponse {
   isSuccess: boolean;
 }
 
+export interface InitProductsState {
+  result: Product[];
+
+  status: string;
+}
 // export type ProductsApiResponse = ApiResponse<Product[]>; // API response with array of products
 // export type ProductApiResponse = ApiResponse<Product>; // API response for a single product
