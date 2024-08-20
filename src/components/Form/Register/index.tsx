@@ -8,9 +8,8 @@ const RegisterForm = () => {
     lastName: '',
     email: '',
     password: '',
-    confirmPassword: '',
+
     clientURI: '',
-    newsletter: false,
   });
 
   const handleChange = (e: {
@@ -92,7 +91,7 @@ const RegisterForm = () => {
               <input
                 type="checkbox"
                 name="newsletter"
-                checked={formData.newsletter}
+                // checked={formData.newsletter}
                 onChange={handleChange}
                 className={styles.formCheckbox}
               />

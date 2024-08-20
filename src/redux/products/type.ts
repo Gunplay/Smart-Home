@@ -4,23 +4,50 @@ export enum Status {
   SUCCESS = 'completed',
   ERROR = 'error',
 }
-
-export interface Products {
-  map(
-    arg0: (item: Products) => import('react/jsx-runtime').JSX.Element
-  ): import('react').ReactNode;
-  length: number;
-  name: string;
-  internalCode: number;
-  price: number;
-  isAvailable: boolean;
-  quantity: number;
-  description: string;
+export interface Category {
+  categoryId: number;
+  categoryName: string;
+  url?: string; // Optional since it's not visible in the screenshot
+  isSubCategory?: boolean; // Optional since it's not visible in the screenshot
+  products?: Product[]; // Optional since it's not visible in the screenshot
+}
+// src/redux/products/type.ts
+export interface Image {
+  filename: string;
+  fileExtension: string;
+  title: string;
   imageUrl: string;
-  id: number;
+  dateCreated: string;
+  productId: number;
 }
 
-export interface ProductsSlice {
-  result: Products[];
-  status: Status;
+export interface Characteristic {
+  characteristicId: number;
+  productCharacteristicName: string;
+  productCharacteristicDescription: string;
+  productId: number;
 }
+
+export interface Product {
+  categories: Category[];
+  characteristics: Characteristic[];
+  images: Image[];
+  isAvailable: boolean;
+  priceWithDiscount: number;
+  productCode: number;
+  productDescription: string;
+  productDiscount: number;
+  productId: number;
+  productName: string;
+  productPrice: number;
+  productUrl?: string;
+  quantityInStock: number;
+}
+
+export interface ProductsApiResponse {
+  data: Product[];
+  isSuccess: boolean;
+}
+
+// export type ProductsApiResponse = ApiResponse<Product[]>; // API response with array of products
+// export type ProductApiResponse = ApiResponse<Product>; // API response for a single product

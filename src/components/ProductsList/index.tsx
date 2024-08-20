@@ -3,34 +3,19 @@
 import { Link } from 'react-router-dom';
 import buttonNextProducts from '../../assets/ButtonsSmartHome/buttonNextProducts.svg';
 //import { fetchProducts } from '../../redux/products/asyncActions';
-import { Products } from '../../redux/products/type';
+import { Product } from '../../redux/products/type';
 //import { AppDispatch } from '../../redux/store';
 import { productsApi } from '../../redux/services/GetProducts';
 import ProductCard from './Product';
 import styles from './ProductsList.module.scss';
 const ProductsList = () => {
-  //const dispatch = useAppDispatch()
-
-  //const dispatch = useDispatch<AppDispatch>();
-  // const products = useSelector(
-  //   (state: { products: { items: Products } }) => state.products.items
-  // );
-
   const {
-    data: products = [],
+    data: productsResponse,
     error,
     isLoading,
   } = productsApi.useFetchProductsQuery();
 
-  let resultData: Products[] = [];
-
-  if ('result' in products) {
-    resultData = products.result as Products[];
-  } else {
-    console.log("Doesn't result field in the object");
-  }
-
-  console.log('products', products);
+  console.log('productsResponse', productsResponse);
   if (isLoading) {
     return <div>Loading products...</div>;
   }
@@ -38,10 +23,12 @@ const ProductsList = () => {
   if (error) {
     return <div>Error loading products</div>;
   }
-  //console.log('productsRTK', products);
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, [dispatch]);
+
+  if (!productsResponse || !productsResponse.data) {
+    return <div>No products available</div>;
+  }
+
+  const products = productsResponse.data;
 
   return (
     <>
@@ -55,8 +42,11 @@ const ProductsList = () => {
         </div>
       </div>
       <div className={styles.productsListWrapper}>
-        {resultData.map((product: Products) => (
-          <Link to={`/product-page/${product.id}`} key={product.id}>
+        {products.map((product: Product) => (
+          <Link
+            to={`/product-page/${product.productId}`}
+            key={product.productId}
+          >
             <div className={styles.productsContainer}>
               <ProductCard product={product} />
             </div>
