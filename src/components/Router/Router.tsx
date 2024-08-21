@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
     // ],
   },
   {
-    path: 'sign-in',
+    path: '/sign-in',
     element: <SignIn />,
     // loader: ({ request }) =>
     //   fetch("/api/dashboard.json", {
@@ -44,11 +44,11 @@ export const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: '/product-page',
+    path: '/product-page/:id',
     element: <ProductPage />,
   },
   {
-    path: 'PageNotFound',
+    path: '/PageNotFound',
     element: <PageNotFound />,
   },
 ]);
