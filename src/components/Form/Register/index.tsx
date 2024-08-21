@@ -8,21 +8,22 @@ import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const baseUrl = window.location.origin;
+  //const baseUrl = window.location.origin;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-    clientURI: `${baseUrl}/api/accounts/emailconfirm`,
+    clientURI: `https://dev.smarthome-team.store/api/accounts/emailconfirm`,
   });
 
   console.log('formData', formData);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     });
   };
 
@@ -32,10 +33,10 @@ const RegisterForm = () => {
     // Extract the base URL before '/register'
 
     // Include baseUrl in the formData
-    const updatedFormData = { ...formData, clientURI: baseUrl };
+    //const updatedFormData = { ...formData, clientURI: baseUrl };
 
     // Dispatch the action with the updated form data and baseUrl
-    dispatch(postAccountUserData({ formData: updatedFormData, baseUrl }));
+    dispatch(postAccountUserData({ formData }));
   };
 
   return (
@@ -117,7 +118,7 @@ const RegisterForm = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label className={styles.formCheckboxLabel}>
+            {/* <label className={styles.formCheckboxLabel}>
               <input
                 type="checkbox"
                 name="newsletter"
@@ -128,7 +129,7 @@ const RegisterForm = () => {
                 Хочу отримувати повідомлення на електронну пошту з інформацією
                 про новини та знижки
               </span>
-            </label>
+            </label> */}
           </div>
         </form>
         <p className={styles.formFooter}>

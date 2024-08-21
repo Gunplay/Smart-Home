@@ -5,11 +5,12 @@ import { RegistrationFormData } from './type';
 export const postAccountUserData = createAsyncThunk(
   'post/accountUserData',
   async (
-    { formData, baseUrl }: { formData: RegistrationFormData; baseUrl: string },
+    { formData }: { formData: RegistrationFormData },
     { rejectWithValue }
   ) => {
     try {
-      const apiUrl = `${baseUrl}/api/Accounts/Registration`; // Dynamic API URL
+      const apiUrl = `https://dev.smarthome-team.store/api/Accounts/Registration`; // Dynamic API URL
+
       const response: AxiosResponse = await axios.post(apiUrl, formData);
       console.log('REGISTERED');
       alert('Work');
