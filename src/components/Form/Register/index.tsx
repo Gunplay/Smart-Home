@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { postAccountUserData } from '../../../redux/AccountRegisterPostData/asycncActions';
-import { useLocation, useParams } from 'react-router-dom';
-import { AppDispatch, RootState } from '../../../redux/store.ts';
+
+import { AppDispatch } from '../../../redux/store.ts';
 import ExitIconForm from '../ExitIconForm';
 import styles from './RegisterForm.module.scss';
 
