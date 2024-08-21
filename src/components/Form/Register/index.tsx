@@ -8,14 +8,16 @@ import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const baseUrl = window.location.origin;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-    clientURI: '',
+    clientURI: `${baseUrl}/api/accounts/emailconfirm`,
   });
 
+  console.log('formData', formData);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -28,12 +30,12 @@ const RegisterForm = () => {
     e.preventDefault();
 
     // Extract the base URL before '/register'
-    const baseUrl = window.location.origin;
-    console.log('baseUrl', baseUrl);
+
+    // Include baseUrl in the formData
     const updatedFormData = { ...formData, clientURI: baseUrl };
 
-    // Dispatch the action with the updated form data
-    dispatch(postAccountUserData(updatedFormData));
+    // Dispatch the action with the updated form data and baseUrl
+    dispatch(postAccountUserData({ formData: updatedFormData, baseUrl }));
   };
 
   return (
