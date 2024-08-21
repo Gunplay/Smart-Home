@@ -11,7 +11,7 @@ export const postAccountUserData = createAsyncThunk(
     try {
       const apiUrl = `${baseUrl}/api/Accounts/Registration`; // Dynamic API URL
       const response: AxiosResponse = await axios.post(apiUrl, formData);
-
+      console.log('REGISTERED');
       return response.data;
     } catch (error) {
       if (error instanceof Error) {
