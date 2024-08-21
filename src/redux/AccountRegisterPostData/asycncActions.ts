@@ -12,9 +12,12 @@ export const postAccountUserData = createAsyncThunk(
       const apiUrl = `${baseUrl}/api/Accounts/Registration`; // Dynamic API URL
       const response: AxiosResponse = await axios.post(apiUrl, formData);
       console.log('REGISTERED');
+      alert('Work');
       return response.data;
     } catch (error) {
       if (error instanceof Error) {
+        alert("Doesn't Work");
+        console.log(" Doesn't Work REGISTERED");
         return rejectWithValue(error.message);
       }
       return rejectWithValue('Failed to post registration data');
