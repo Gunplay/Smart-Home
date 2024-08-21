@@ -5,32 +5,51 @@ import Register from '../Form/Register';
 import SignIn from '../Form/SignIn';
 import PageNotFound from '../Page404';
 
-export const routes = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
-    children: [
-      {
-        path: 'register',
-        element: <Register />,
-      },
-      {
-        path: 'sign-in',
-        element: <SignIn />,
-        // loader: ({ request }) =>
-        //   fetch("/api/dashboard.json", {
-        //     signal: request.signal,
-        //   }),
-      },
-      {
-        path: 'ProductPage',
-        element: <ProductPage />,
-      },
-      {
-        path: 'PageNotFound',
-        element: <PageNotFound />,
-      },
-    ],
+    // children: [
+    //   // {
+
+    //   // },
+    //   {
+    //     path: 'sign-in',
+    //     element: <SignIn />,
+    //     // loader: ({ request }) =>
+    //     //   fetch("/api/dashboard.json", {
+    //     //     signal: request.signal,
+    //     //   }),
+    //   },
+    //   {
+    //     path: 'product-page',
+    //     element: <ProductPage />,
+    //   },
+    //   {
+    //     path: 'PageNotFound',
+    //     element: <PageNotFound />,
+    //   },
+    // ],
+  },
+  {
+    path: 'sign-in',
+    element: <SignIn />,
+    // loader: ({ request }) =>
+    //   fetch("/api/dashboard.json", {
+    //     signal: request.signal,
+    //   }),
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: 'product-page',
+    element: <ProductPage />,
+  },
+  {
+    path: 'PageNotFound',
+    element: <PageNotFound />,
   },
 ]);
 // const routes: RouteObject[] = [

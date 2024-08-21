@@ -72,7 +72,7 @@ const NavigationBar: React.FC = () => {
             <Link to={'/register'}>зареєструватися</Link>
             </button> */}
           <p className={styles.text}>
-            <Link to={'/sign-in'}>
+            <Link to="/sign-in">
               <button>Увійти</button>
             </Link>
 
