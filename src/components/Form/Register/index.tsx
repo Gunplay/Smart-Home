@@ -1,20 +1,22 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { postAccountUserData } from '../../../redux/AccountRegisterPostData/asycncActions';
+import { useLocation, useParams } from 'react-router-dom';
+import { AppDispatch, RootState } from '../../../redux/store.ts';
 import ExitIconForm from '../ExitIconForm';
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-
     clientURI: '',
   });
 
-  const handleChange = (e: {
-    target: { name: string; value: string; type: string; checked: boolean };
-  }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
@@ -22,9 +24,16 @@ const RegisterForm = () => {
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    // Extract the base URL before '/register'
+    const baseUrl = window.location.origin;
+    console.log('baseUrl', baseUrl);
+    const updatedFormData = { ...formData, clientURI: baseUrl };
+
+    // Dispatch the action with the updated form data
+    dispatch(postAccountUserData(updatedFormData));
   };
 
   return (
@@ -37,16 +46,32 @@ const RegisterForm = () => {
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="firstName" className={styles.formLabel}>
-              Ім'я та призвіще
+              Ім'я
             </label>
             <input
               type="text"
-              name="firstNameAndSurname"
-              id="firstNameAndSurname"
+              name="firstName"
+              id="firstName"
               value={formData.firstName}
               onChange={handleChange}
               className={styles.formInput}
               placeholder="Ім'я"
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="lastName" className={styles.formLabel}>
+              Призвіще
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              className={styles.formInput}
+              placeholder="Призвіще"
               required
             />
           </div>
@@ -66,6 +91,7 @@ const RegisterForm = () => {
               required
             />
           </div>
+
           <div className={styles.formGroup}>
             <label htmlFor="password" className={styles.formLabel}>
               Пароль
@@ -81,17 +107,18 @@ const RegisterForm = () => {
               required
             />
           </div>
+
           <div className={styles.submitButtonContainer}>
             <button type="submit" className={styles.submitButton}>
               Зареєструватися
             </button>
           </div>
+
           <div className={styles.formGroup}>
             <label className={styles.formCheckboxLabel}>
               <input
                 type="checkbox"
                 name="newsletter"
-                // checked={formData.newsletter}
                 onChange={handleChange}
                 className={styles.formCheckbox}
               />

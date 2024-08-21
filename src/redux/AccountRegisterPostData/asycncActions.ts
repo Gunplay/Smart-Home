@@ -1,28 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosResponse } from 'axios';
-import { AppStateResStatus, PostAccountUserDataParams } from './type';
+import { RegistrationFormData } from './type';
 
-const postAccountUserData = createAsyncThunk(
-  'post/AccountUserData',
-  async ({ url, formData }: PostAccountUserDataParams, { rejectWithValue }) => {
+export const postAccountUserData = createAsyncThunk(
+  'post/accountUserData',
+  async (formData: RegistrationFormData, { rejectWithValue }) => {
     try {
-      const response: AxiosResponse<AppStateResStatus> = await axios.post(
-        url,
+      const response: AxiosResponse = await axios.post(
+        'http://dev.smarthome-team.store/api/Accounts/Registration',
         formData
       );
 
       return response.data;
     } catch (error) {
-      console.error('Error Account Post Data:', error);
       if (error instanceof Error) {
-        return rejectWithValue(
-          error.message || 'Failed to post auth registration data'
-        );
-      } else {
-        return rejectWithValue('Failed to post auth registration data');
+        return rejectWithValue(error.message);
       }
+      return rejectWithValue('Failed to post registration data');
     }
   }
 );
-
-export default postAccountUserData;
