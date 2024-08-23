@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {
 //   faSearch,
@@ -8,8 +8,12 @@ import React from 'react';
 // } from '@fortawesome/free-solid-svg-icons';
 import SideMenu from '../SideMenu/SideMenu';
 import styles from './Header.module.scss';
+import ModalCart from '../ModalCart/ModalCart';
 
 const Header: React.FC = () => {
+  const [openCart, setOpenCart] = useState(false);
+  const handleOpen = () => setOpenCart(!openCart);
+
   return (
     <div className={styles.header}>
       <div className={styles.box}>
@@ -82,7 +86,7 @@ const Header: React.FC = () => {
               </svg>
             </div>
           </div>
-          <div className={styles.icon}>
+          <div className={styles.icon} onClick={handleOpen}>
             <div className={styles.iconBox}>
               <svg
                 width="24"
@@ -107,6 +111,7 @@ const Header: React.FC = () => {
           <FontAwesomeIcon className={styles.icon} icon={faShoppingBag} /> */}
         </div>
       </div>
+      <ModalCart openCart={openCart} onClose={handleOpen}/>
     </div>
   );
 };
