@@ -3,11 +3,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Базовый URL для вашего приложения
-  publicDir: 'public', // Директория со статическими файлами
+  publicDir: 'public',
   build: {
-    outDir: 'dist', // Директория для сборки
-    assetsDir: 'assets', // Директория для статических файлов
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
   server: {
     host: '0.0.0.0',
