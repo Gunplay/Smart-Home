@@ -11,7 +11,7 @@ interface ModalProps {
 
 const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
   if (!openCart) return null;
-  const { totalPrice, cartItems } = useSelector(
+  const { totalPrice } = useSelector(
     (state: RootState) => state.cartReducer
   );
 
