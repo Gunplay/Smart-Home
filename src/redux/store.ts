@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import authReducer from './AccountRegisterPostData/slice';
 import productsReducer from './products/slice';
 import { productsApi } from './services/GetProducts';
+import { cartReducer } from './cart/cartSlice';
 
 const rootReducer = combineReducers({
   productsReducer,
   auth: authReducer,
   [productsApi.reducerPath]: productsApi.reducer,
+  cartReducer
 });
 
 export const setupStore = () => {
