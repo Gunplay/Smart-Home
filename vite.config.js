@@ -6,7 +6,7 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    smartHome: '../SMART-HOME',
   },
   server: {
     host: '0.0.0.0',

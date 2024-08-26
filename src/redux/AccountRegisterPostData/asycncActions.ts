@@ -13,7 +13,9 @@ export const postAccountUserData = createAsyncThunk(
 
       const response: AxiosResponse = await axios.post(apiUrl, formData);
       console.log('REGISTERED');
-      alert('Work');
+      alert(
+        'Account has been created, you should checkout your email for finish registration'
+      );
       return response.data;
     } catch (error) {
       if (error instanceof Error) {
