@@ -4,6 +4,7 @@ interface CartItem {
   id: number;
   name: string;
   price: number;
+  imageURL: string;
   quantity: number;
 }
 
@@ -13,7 +14,7 @@ interface CartState {
 }
 
 const initialState: CartState = {
-  totalPrice: 100500,
+  totalPrice: 0,
   cartItems: [],
 };
 
@@ -22,6 +23,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action: PayloadAction<CartItem>) {
+      console.log('addItem payload:', action.payload);
       state.cartItems.push(action.payload);
       state.totalPrice += action.payload.price * action.payload.quantity;
     },

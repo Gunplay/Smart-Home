@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   productsReducer,
   auth: authReducer,
   [productsApi.reducerPath]: productsApi.reducer,
-  cartReducer
+  cart: cartReducer,
 });
 
 export const setupStore = () => {
