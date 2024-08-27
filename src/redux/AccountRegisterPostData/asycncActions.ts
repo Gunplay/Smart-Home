@@ -9,7 +9,7 @@ export const postAccountUserData = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const apiUrl = `https://dev.smarthome-team.store/api/Accounts/Registration`; // Dynamic API URL
+      const apiUrl = `https://smarthomedev-002-site3.ctempurl.com/api/Accounts/Registration`; // Dynamic API URL
 
       const response: AxiosResponse = await axios.post(apiUrl, formData);
       console.log('REGISTERED');
