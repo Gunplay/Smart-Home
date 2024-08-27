@@ -4,13 +4,18 @@ import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
 import { Products } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../../redux/cart/cartSlice';
 
 interface ProductCardProps {
   product: Products;
 }
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
+  const dispatch = useDispatch();
+
   const {
+    id,
     name,
     //description,
     // id,
@@ -31,6 +36,16 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // setCurrentImageIndex(prevIndex =>
     //   prevIndex === 0 ? imageUrl.length - 1 : prevIndex - 1
     // );
+  };
+
+  const handleAddtoCart = () => {
+    const cartItem = {
+      id,
+      name,
+      price,
+      quantity: 1,
+    };
+    dispatch(addItem(cartItem));
   };
 
   return (
@@ -68,7 +83,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
       <div className={styles.button}>
-        <button>До кошика</button>
+        <button onClick={handleAddtoCart}>До кошика</button>
       </div>
     </div>
   );

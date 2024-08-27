@@ -24,7 +24,6 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
             <FontAwesomeIcon icon={faXmark} className={styles.closeIcon} />
           </button>
         </div>
-
         <div className={styles.cartFooter}>
           <h3 className={styles.totalPrice}>Підсумок: {totalPrice} &#8372;</h3>
           <div className={styles.buttons}>
