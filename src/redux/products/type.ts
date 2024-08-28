@@ -42,6 +42,7 @@ export interface Product {
   productPrice: number;
   productUrl?: string;
   quantityInStock: number;
+  imageURL: string;
 }
 
 export interface ProductsApiResponse {

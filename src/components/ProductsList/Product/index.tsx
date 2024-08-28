@@ -4,6 +4,8 @@ import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
 import { Product } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../../redux/cart/cartSlice';
 
 interface ProductCardProps {
   product: Product;
@@ -14,17 +16,20 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // categories,
     // characteristics,
     images,
+    imageURL,
     // isAvailable,
     // priceWithDiscount,
     // productCode,
     // productDescription,
     productDiscount,
-    // productId,
+    productId,
     productName,
     productPrice,
     // productUrl,
     // quantityInStock,
   } = product;
+
+  const dispatch = useDispatch();
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -36,6 +41,21 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // setCurrentImageIndex(prevIndex =>
     //   prevIndex === 0 ? imageUrl.length - 1 : prevIndex - 1
     // );
+  };
+
+  const handleAddToCart = (evt: React.MouseEvent<HTMLButtonElement>) => {
+    evt.preventDefault();
+    evt.stopPropagation();
+   
+    const cartItem = {
+      id: productId,
+      name: productName,
+      imageURL: imageURL,
+      price: productPrice,
+      quantity: 1,
+    };
+
+    dispatch(addItem(cartItem));
   };
 
   return (
@@ -84,7 +104,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
       <div className={styles.button}>
-        <button>До кошика</button>
+        <button onClick={handleAddToCart}>До кошика</button>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ interface CartItem {
   id: number;
   name: string;
   price: number;
+  imageURL: string;
   quantity: number;
 }
 
@@ -13,7 +14,7 @@ interface CartState {
 }
 
 const initialState: CartState = {
-  totalPrice: 100500,
+  totalPrice: 0,
   cartItems: [],
 };
 
