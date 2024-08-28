@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
+import { addItem } from '../../../redux/cart/cartSlice';
 import { Product } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../../../redux/cart/cartSlice';
 
 interface ProductCardProps {
   product: Product;
@@ -46,7 +46,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const handleAddToCart = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();
     evt.stopPropagation();
-   
+    console.log('count');
     const cartItem = {
       id: productId,
       name: productName,
