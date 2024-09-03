@@ -1,39 +1,50 @@
-// import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// import { RegistrationState } from './type';
-// import { postLoginUserData } from './asyncLoginAct';
-// import { postAccountUserData } from '../AccountRegisterPostData/asycncActions';
+import { UserDataState } from './type';
+import { postLoginUserData } from './asyncLoginAct';
 
-// const initialState: RegistrationState = {
-//   loading: false,
-//   error: null,
-//   success: false,
-// };
-// // import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// const registrationSlice = createSlice({
-//   name: 'registration',
-//   initialState,
-//   reducers: {},
-//   extraReducers: builder => {
-//     builder.addCase(postAccountUserData.pending, state => {
-//       state.status = Status.LOADING;
-//       state.userData = null;
-//       state.token = null;
-//     });
-//     builder.addCase(
-//       postAccountUserData.fulfilled,
-//       (state, action: PayloadAction<any>) => {
-//         state.status = Status.SUCCESS;
-//         state.userData = action.payload.userData;
-//         state.token = action.payload.token;
-//       }
-//     );
-//     builder.addCase(postAccountUserData.rejected, state => {
-//       state.status = Status.ERROR;
-//       state.userData = null;
-//       state.token = null;
-//     });
-//   },
-// });
+const initialState: UserDataState = {
+  userData: null,
+  isAuthSuccessful: false,
+  errorMessage: '',
+  token: null,
+  is2StepVerificationRequired: false,
+  provider: null,
+};
+// import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+const registrationSlice = createSlice({
+  name: 'registration',
+  initialState,
+  reducers: {
+    // You can add more synchronous actions here if needed
+  },
+  extraReducers: builder => {
+    builder.addCase(postLoginUserData.pending, state => {
+      state.errorMessage = '';
+      state.isAuthSuccessful = false;
+    });
+    builder.addCase(
+      postLoginUserData.fulfilled,
+      (state, action: PayloadAction<any>) => {
+        state.isAuthSuccessful = action.payload.isAuthSuccessful;
+        state.errorMessage = action.payload.errorMessage || '';
+        state.token = action.payload.token;
+        state.is2StepVerificationRequired =
+          action.payload.is2StepVerificationRequired;
+        state.provider = action.payload.provider;
+      }
+    );
+    builder.addCase(
+      postLoginUserData.rejected,
+      (state, action: PayloadAction<any>) => {
+        state.errorMessage = action.payload || 'Login failed';
+        state.isAuthSuccessful = false;
+        state.token = null;
+        state.is2StepVerificationRequired = false;
+        state.provider = null;
+      }
+    );
+  },
+});
 
-// export default registrationSlice.reducer;
+export default registrationSlice.reducer;

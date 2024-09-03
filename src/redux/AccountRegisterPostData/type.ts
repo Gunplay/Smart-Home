@@ -12,6 +12,8 @@ export interface RegistrationState {
   loading: boolean;
   error: string | null;
   success: boolean;
+  // errorMessage: null,
+  // isAuthSuccessful: false,
 }
 
 // Initial state

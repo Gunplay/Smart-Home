@@ -1,9 +1,24 @@
 // src/components/NavigationBar.tsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './NavigationBar.module.scss';
-
 const NavigationBar: React.FC = () => {
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     console.log('Token found, navigating to /');
+  //     token && navigate('/');
+  //   } else {
+  //     console.log('No token found, staying on the page');
+  //   }
+  // }, [navigate]);
+
+  const handleLogout = () => {
+    navigate('/');
+    localStorage.clear();
+  };
   return (
     <div className={styles.navbar}>
       <a href="/">
@@ -72,11 +87,13 @@ const NavigationBar: React.FC = () => {
             <Link to={'/register'}>зареєструватися</Link>
             </button> */}
           <p className={styles.text}>
-            <Link to="/sign-in">
-              <button>Увійти</button>
-            </Link>
-
-            {/* Увійти/зареєструватися */}
+            {localStorage.getItem('token') ? (
+              <button onClick={handleLogout} className={styles.logout}>
+                Вийти
+              </button>
+            ) : (
+              <Link to="/sign-in">Войти</Link>
+            )}
           </p>
           <svg
             width="24"
