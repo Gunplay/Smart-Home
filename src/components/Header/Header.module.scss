@@ -10,6 +10,9 @@
   height: 64px;
   margin: auto;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 
 .box {
   width: 1200px;
@@ -57,6 +60,7 @@
 .iconBox {
   width: 24px;
   height: 24px;
+  position: relative;
 }
 
 .icons {
@@ -70,4 +74,26 @@
   font-size: 20px;
   color: #8d8d8d;
   cursor: pointer;
+}
+
+.cartItemCounter {
+  background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 4px;
+
+  position: absolute;
+  top: -18px;
+  right: -22px;
+}
+
+.counterValue {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #393939;
 }
