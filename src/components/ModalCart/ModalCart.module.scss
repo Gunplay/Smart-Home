@@ -80,5 +80,78 @@
   padding: 10px 20px;
 
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  background: #94d397;
+  background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
+}
+.cartItems {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+.cartItem {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.itemImage {
+  border-radius: 10px;
+  width: 7.5rem;
+  height: 7.5rem;
+  background: #cfcfcf;
+  margin-right: 20px;
+}
+
+.itemWrap {
+  display: flex;
+  width: 100%;
+}
+
+.itemName {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #393939;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.deleteItem {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #91a0a5;
+  width: 24px;
+  height: 24px;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+}
+
+.itemPrice {
+  position: absolute;
+  right: 0;
+
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: right;
+  color: #393939;
+}
+
+.quantityControl > span {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #393939;
+  margin-right: 10px;
+}
+
+.quantityBtn {
+  color: #91a0a5;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 }

@@ -16,7 +16,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // categories,
     // characteristics,
     images,
-    imageURL,
+    imageUrl,
     // isAvailable,
     // priceWithDiscount,
     // productCode,
@@ -46,11 +46,10 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const handleAddToCart = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();
     evt.stopPropagation();
-    console.log('count');
     const cartItem = {
       id: productId,
       name: productName,
-      imageURL: imageURL,
+      imageURL: images[0].imageUrl,
       price: productPrice,
       quantity: 1,
     };

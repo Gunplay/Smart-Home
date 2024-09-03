@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {
 //   faSearch,
@@ -9,10 +9,23 @@ import React, { useState } from 'react';
 import SideMenu from '../SideMenu/SideMenu';
 import styles from './Header.module.scss';
 import ModalCart from '../ModalCart/ModalCart';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 const Header: React.FC = () => {
   const [openCart, setOpenCart] = useState(false);
   const handleOpen = () => setOpenCart(!openCart);
+  const { cartItems } = useSelector((state: RootState) => state.cart);
+
+  useEffect(() => {
+    openCart
+      ? document.body.classList.add('overflow-hidden')
+      : document.body.classList.remove('overflow-hidden');
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [openCart]);
 
   return (
     <div className={styles.header}>
@@ -88,6 +101,9 @@ const Header: React.FC = () => {
           </div>
           <div className={styles.icon} onClick={handleOpen}>
             <div className={styles.iconBox}>
+              <div className={styles.cartItemCounter}>
+                <span className={styles.counterValue}>{cartItems.length}</span>
+              </div>
               <svg
                 width="24"
                 height="24"
@@ -111,7 +127,7 @@ const Header: React.FC = () => {
           <FontAwesomeIcon className={styles.icon} icon={faShoppingBag} /> */}
         </div>
       </div>
-      <ModalCart openCart={openCart} onClose={handleOpen}/>
+      <ModalCart openCart={openCart} onClose={handleOpen} />
     </div>
   );
 };

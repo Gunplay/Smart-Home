@@ -1,0 +1,60 @@
+.emptyContent {
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.iconCry {
+  width: 6.25rem;
+  height: 6.25rem;
+
+  color: #91a0a5;
+  margin-bottom: 20px;
+}
+
+.emptyContent h3 {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: #91a0a5;
+
+  margin-bottom: 10px;
+}
+
+.emptyContent h6 {
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #91a0a5;
+
+  margin-bottom: 20px;
+}
+
+.emptyCartBtn {
+  border-radius: 20px;
+  padding: 10px 20px;
+
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
+
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #393939;
+}
+
+.toDiscountsLink {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #a894d3;
+
+  text-align: center;
+  margin-bottom: 40px;
+}
