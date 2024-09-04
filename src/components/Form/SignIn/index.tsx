@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import ButtonReg from '../../../assets/ButtonsSmartHome/buttonReg.svg';
+import FaceBook from '../../../assets/footerSocialIcons/facebook.svg';
+import Instagram from '../../../assets/footerSocialIcons/instagram.svg';
 import { postLoginUserData } from '../../../redux/LogInPost/asyncLoginAct';
 import { AppDispatch } from '../../../redux/store';
 import Button from '../../Button';
 import styles from './SignInForm.module.scss';
+
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,26 +80,19 @@ const SignIn: React.FC = () => {
             </Link>
           </div>
 
-          {/* <div>
-            <Link to="/register">
-              <img src={ButtonReg} alt="Register" />
-            </Link>
+          <div>
             <div className={styles.formText}>Або увійти через</div>
             <div className={styles.WrapperIcons}>
               <div className={styles.FaceBookIcon}>
                 <img src={FaceBook} alt="FaceBook" />
               </div>
               <div className={styles.GoogleIcon}>
-                <img src={insta} alt="Google" />
+                <img src={Instagram} alt="Google" />
               </div>
             </div>
-            <Link to={'/register'}>
-              {/* <Button>
-                  <img src={buttonReg}></img>
-                </Button> 
-            </Link>
+
             <div>Забули пароль? Відновити</div>
-          </div> */}
+          </div>
         </form>
         {/* {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>} */}
       </div>

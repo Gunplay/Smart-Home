@@ -89,10 +89,10 @@ const NavigationBar: React.FC = () => {
           <p className={styles.text}>
             {localStorage.getItem('token') ? (
               <button onClick={handleLogout} className={styles.logout}>
-                Увійти
+                Вийти з акаунту
               </button>
             ) : (
-              <Link to="/sign-in">Войти</Link>
+              <Link to="/sign-in">Увійти</Link>
             )}
           </p>
           <svg
