@@ -16,7 +16,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // categories,
     // characteristics,
     images,
-    imageUrl,
+    //imageUrl,
     // isAvailable,
     // priceWithDiscount,
     // productCode,
