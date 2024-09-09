@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .iconCry {
@@ -45,6 +44,20 @@
   font-weight: 400;
   font-size: 16px;
   color: #393939;
+
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emptyCartBtn:hover {
+  border: 2px solid #a894d3;
+  background: transparent;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+
+.emptyCartBtn:active {
+  background: #94d397;
+  border: none;
+  box-shadow: none;
 }
 
 .toDiscountsLink {
@@ -54,7 +67,23 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #a894d3;
+  width: fit-content;
 
   text-align: center;
+
+  border-radius: 44px;
+  padding: 12px 24px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
+
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toDiscountsLink:hover {
+  border-bottom: 1px dashed #e69779;
+}
+
+.toDiscountsLink:active {
+  border: 1px dashed #e69779;
 }
