@@ -14,6 +14,7 @@ import {
 import { RootState } from '../../redux/store';
 import styles from './ModalCart.module.scss';
 import EmptyCart from './EmptyCart.tsx';
+import { AdditionalOptions } from './AdditionalOptions.tsx';
 
 interface ModalProps {
   openCart: boolean;
@@ -76,7 +77,10 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
                       </div>
                     </div>
                   </div>
+                  <AdditionalOptions />
+                  <hr />
                 </div>
+              
               ))}
             </div>
 

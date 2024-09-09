@@ -18,9 +18,10 @@ const EmptyCart: React.FC<EmptyCartProps> = ({ onClose }) => {
           Додати товари
         </button>
       </div>
-      <Link to={'/'} className={styles.toDiscountsLink} onClick={onClose}>
-        Ознайомтесь з нашими акціями
-      </Link>
+      <button className={styles.toDiscountsLink} onClick={onClose}>
+        <Link to={'/'}> Ознайомтесь з нашими акціями </Link>
+      </button>
+     
     </>
   );
 };

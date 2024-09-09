@@ -1,0 +1,58 @@
+.dropdown {
+  width: 75%;
+  margin-left: auto;
+
+  border: 1px solid #e8ecef;
+  border-radius: 20px;
+  padding: 20px;
+
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #393939;
+}
+
+.dropBtn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownContent label {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #393939;
+}
+
+.dropdownContent input {
+  margin-right: 10px;
+
+  border: 2px solid #91a0a5;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.iconArrow {
+    margin-left: auto;
+    width: 16px;
+    height: 16px;
+    fill: #91A0A5;
+}
+
+.iconArrow.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  
