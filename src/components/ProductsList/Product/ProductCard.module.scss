@@ -123,7 +123,7 @@
 .button {
   display: flex;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 40px;
   padding: 10px 20px;
   margin-left: auto;
   margin-right: auto;
@@ -137,7 +137,7 @@
   color: #393939;
 
   &:hover {
-    border: 2px solid #a894d3;
+    outline: 2px solid #a894d3;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3),
       0 8px 12px 6px rgba(0, 0, 0, 0.15);
     background: transparent;
@@ -146,6 +146,7 @@
   &:active {
     padding: 12px 24px;
     background: #94d397;
-    border: none;
+    outline: none;
+    box-shadow: none;
   }
 }
