@@ -16,7 +16,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // categories,
     // characteristics,
     images,
-    imageUrl,
+    // imageUrl,
     // isAvailable,
     // priceWithDiscount,
     // productCode,
@@ -102,9 +102,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.newPrice}>{productPrice}</span>
         </div>
       </div>
-      <div className={styles.button}>
-        <button onClick={handleAddToCart}>До кошика</button>
-      </div>
+      <button onClick={handleAddToCart} className={styles.button}>
+        До кошика
+      </button>
     </div>
   );
 };
