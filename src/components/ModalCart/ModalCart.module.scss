@@ -73,6 +73,16 @@
   border: 2px dashed #afc1e7;
   border-radius: 44px;
   padding: 12px 24px;
+  transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.continueBtn:hover {
+  border: 2px dashed #94d397;
+}
+
+.continueBtn:active {
+  border: 2px solid #94d397;
+  color: #94d397;
 }
 
 .orderBtn {
@@ -81,7 +91,22 @@
 
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
+
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.orderBtn:hover {
+  border: 2px solid #a894d3;
+  background: transparent;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+
+.orderBtn:active {
+  background: #94d397;
+  border: none;
+  box-shadow: none;
+}
+
 .cartItems {
   max-height: 60vh;
   overflow-y: auto;
@@ -92,6 +117,12 @@
   position: relative;
   width: 100%;
   margin-bottom: 20px;
+}
+
+.cartItem hr {
+  border: 1px solid #e8ecef;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .itemImage {
