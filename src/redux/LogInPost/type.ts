@@ -1,28 +1,16 @@
+// Interface for the data sent to the API
 export interface postDataUser {
   email: string;
   password: string;
   clientURI: string;
 }
 
-export interface UserData {
+// Interface for the user data state
+export interface UserDataState {
+  userData: postDataUser | null;
   isAuthSuccessful: boolean;
   errorMessage: string;
-  token: null;
-  is2StepVerificationRequired: boolean;
-  provider: null;
-}
-
-export interface AppState {
-  userData: UserData;
   token: string | null;
-  isOpenAuthModal: boolean;
-  isLoginAuthModalMode: boolean;
-  adsCategories: string[];
-  modalPhoto: string | null;
+  is2StepVerificationRequired: boolean;
+  provider: string | null;
 }
-// export enum Status {
-//   IDLE = 'idle',
-//   LOADING = 'loading',
-//   SUCCESS = 'completed',
-//   ERROR = 'error',
-// }

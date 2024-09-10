@@ -1,60 +1,100 @@
-import buttonReg from '../../../assets/ButtonsSmartHome/buttonReg.svg';
-
-import { Link } from 'react-router-dom';
-import FaceBook from '../../../assets/iconsRegister/faceboock.svg';
-import Google from '../../../assets/iconsRegister/google.svg';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import ButtonReg from '../../../assets/ButtonsSmartHome/buttonReg.svg';
+import FaceBook from '../../../assets/footerSocialIcons/facebook.svg';
+import Instagram from '../../../assets/footerSocialIcons/instagram.svg';
+import { postLoginUserData } from '../../../redux/LogInPost/asyncLoginAct';
+import { AppDispatch } from '../../../redux/store';
 import Button from '../../Button';
-import ExitIconForm from '../ExitIconForm';
 import styles from './SignInForm.module.scss';
 
-const SignIn = () => {
+const SignIn: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+  //const { errorMessage } = useSelector((state: RootState) => state.auth);
+  // useEffect(() => {
+  //   const token = !!localStorage.getItem('token');
+  //   if (token) {
+  //     console.log('Token found, navigating to /');
+  //     navigate('/');
+  //   } else {
+  //     console.log('No token found, staying on the page');
+  //   }
+  // }, [navigate]);
+
+  const Login = () => {
+    const token = !!localStorage.getItem('token');
+    token && navigate('/');
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    dispatch(
+      postLoginUserData({
+        formData: { email, password, clientURI: window.location.origin },
+      })
+    );
+  };
+
   return (
     <div className={styles.formContainer}>
       <div className={styles.formWrapper}>
-        <div className={styles.formExit}>
-          <ExitIconForm />
-        </div>
-        <h2 className={styles.formTitle}>Вхід</h2>
-        <form>
-          {/* <div className={styles.formGroup}>
-            <input
-              type="text"
-              name="firstNameAndSurname"
-              id="firstNameAndSurname"
-              placeholder="Ім'я та призвіще"
-              className={styles.formInput}
-            ></input>
-          </div> */}
+        <h2 className={styles.formTitle}>Login</h2>
+        <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <input
-              placeholder="Eлектронна пошта"
+              type="email"
+              placeholder="Email"
               className={styles.formInput}
-            ></input>
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div className={styles.formGroup}>
-            <input placeholder="Пароль" className={styles.formInput}></input>
+            <input
+              type="password"
+              placeholder="Password"
+              className={styles.formInput}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
           </div>
           <div className={styles.formGroup}>
-            <div className={styles.buttonRegContainer}>
-              <Button className={styles.buttonRegisterPhone}>Увійти</Button>
-              <div className={styles.formText}>Або увійти через</div>
-              <div className={styles.WrapperIcons}>
-                <div className={styles.FaceBookIcon}>
-                  <img src={FaceBook} alt="FaceBook" />
-                </div>
-                <div className={styles.GoogleIcon}>
-                  <img src={Google} alt="Google" />
-                </div>
+            <button
+              type="submit"
+              className={styles.buttonRegisterPhone}
+              onClick={Login}
+            >
+              Увійти
+            </button>
+          </div>
+          <div>
+            <Link to={'/register'}>
+              <Button>
+                <img src={ButtonReg}></img>
+              </Button>
+            </Link>
+          </div>
+
+          <div>
+            <div className={styles.formText}>Або увійти через</div>
+            <div className={styles.WrapperIcons}>
+              <div className={styles.FaceBookIcon}>
+                <img src={FaceBook} alt="FaceBook" />
               </div>
-              <Link to={'/register'}>
-                <Button>
-                  <img src={buttonReg}></img>
-                </Button>
-              </Link>
-              <div>Забули пароль? Відновити</div>
+              <div className={styles.GoogleIcon}>
+                <img src={Instagram} alt="Google" />
+              </div>
             </div>
+
+            <div>Забули пароль? Відновити</div>
           </div>
         </form>
+        {/* {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>} */}
       </div>
     </div>
   );
