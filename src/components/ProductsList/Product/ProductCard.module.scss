@@ -68,8 +68,8 @@
   height: 48px;
   margin: 10px 0;
 
-  &>h3 {
-    font-family: "Jura", sans-serif;
+  & > h3 {
+    font-family: 'Jura', sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #393939;
@@ -123,18 +123,29 @@
 .button {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  border-radius: 14px;
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 
-  &>button {
-    border-radius: 14px;
-    padding: 10px 20px;
-    width: 129px;
-    height: 39px;
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    background: linear-gradient(270deg, #ff9e9e 0%, #fadc93 100%);
-    font-family: "Tenor Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #393939;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  background: linear-gradient(270deg, #ff9e9e 0%, #fadc93 100%);
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #393939;
+
+  &:hover {
+    border: 2px solid #a894d3;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3),
+      0 8px 12px 6px rgba(0, 0, 0, 0.15);
+    background: transparent;
+  }
+
+  &:active {
+    padding: 12px 24px;
+    background: #94d397;
+    border: none;
   }
 }
