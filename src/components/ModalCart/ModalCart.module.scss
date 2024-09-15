@@ -91,7 +91,6 @@
 
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   background: linear-gradient(90deg, #a8dbaa 0%, #fafe0f 100%);
-
 }
 
 .orderBtn:hover {
@@ -153,6 +152,12 @@
   color: #91a0a5;
   width: 24px;
   height: 24px;
+}
+
+.trashIcon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
 }
 
 .quantityControl {
