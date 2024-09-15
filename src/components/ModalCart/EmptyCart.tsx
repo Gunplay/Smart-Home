@@ -1,5 +1,4 @@
-import { faFaceSadCry } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaRegFaceSadCry } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import styles from './EmptyCart.module.scss';
 
@@ -11,7 +10,7 @@ const EmptyCart: React.FC<EmptyCartProps> = ({ onClose }) => {
   return (
     <>
       <div className={styles.emptyContent}>
-        <FontAwesomeIcon icon={faFaceSadCry} className={styles.iconCry} />
+        <FaRegFaceSadCry className={styles.iconCry}/>
         <h3>Твій кошик порожній</h3>
         <h6>Але це ніколи не пізно виправити :)</h6>
         <button className={styles.emptyCartBtn} onClick={onClose}>
@@ -21,7 +20,6 @@ const EmptyCart: React.FC<EmptyCartProps> = ({ onClose }) => {
       <button className={styles.toDiscountsLink} onClick={onClose}>
         <Link to={'/'}> Ознайомтесь з нашими акціями </Link>
       </button>
-     
     </>
   );
 };

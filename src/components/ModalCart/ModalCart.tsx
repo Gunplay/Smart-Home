@@ -1,20 +1,16 @@
-import {
-  faMinus,
-  faPlus,
-  faTrashCan,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   decreaseQuantity,
-  deleteItem,
   increaseQuantity,
 } from '../../redux/cart/cartSlice.ts';
-import { RootState } from '../../redux/store';
+import { AppDispatch, RootState } from '../../redux/store';
 import styles from './ModalCart.module.scss';
 import EmptyCart from './EmptyCart.tsx';
 import { AdditionalOptions } from './AdditionalOptions.tsx';
+import { HiOutlineTrash } from 'react-icons/hi';
+import { deleteCartItem } from '../../redux/cart/operations.ts';
 
 interface ModalProps {
   openCart: boolean;
@@ -22,10 +18,18 @@ interface ModalProps {
 }
 
 const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const { totalPrice, cartItems } = useSelector(
     (state: RootState) => state.cart
   );
+
+
+// useEffect(() => {
+ 
+
+//   console.log(totalPrice, cartItems);
+// }, [dispatch]);
+
 
   if (!openCart) return null;
 
@@ -52,10 +56,10 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
                     <div className={styles.itemDetails}>
                       <h3 className={styles.itemName}>{item.name}</h3>
                       <button
-                        onClick={() => dispatch(deleteItem(item.id))}
+                        onClick={() => dispatch(deleteCartItem(item.id))}
                         className={styles.deleteItem}
                       >
-                        <FontAwesomeIcon icon={faTrashCan} />
+                        <HiOutlineTrash className={styles.trashIcon} />
                       </button>
                       <div className={styles.quantityControl}>
                         <button
@@ -80,7 +84,6 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
                   <AdditionalOptions />
                   <hr />
                 </div>
-              
               ))}
             </div>
 

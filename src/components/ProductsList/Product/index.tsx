@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
-import { addItem } from '../../../redux/cart/cartSlice';
 import { Product } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
+import { addCartItem } from '../../../redux/cart/operations';
+import { AppDispatch } from '../../../redux/store';
+import { nanoid } from '@reduxjs/toolkit';
 
 interface ProductCardProps {
   product: Product;
@@ -29,7 +31,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     // quantityInStock,
   } = product;
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -46,16 +48,28 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const handleAddToCart = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();
     evt.stopPropagation();
-    const cartItem = {
-      id: productId,
-      name: productName,
-      imageURL: images[0].imageUrl,
-      price: productPrice,
-      quantity: 1,
+
+    const cartId = nanoid();
+
+    const cartData = {
+      id: cartId,
+      items: [
+        {
+          productId: productId,
+          productName: productName,
+          price: productPrice,
+          quantity: 1,
+          pictureUrl: images[0].imageUrl,
+        },
+      ],
+      deliveryMethodId: 0,
+      clientSecret: '',
+      paymentIntentId: '',
     };
 
-    dispatch(addItem(cartItem));
+    dispatch(addCartItem(cartData));
   };
+
 
   return (
     <div className={styles.card}>
