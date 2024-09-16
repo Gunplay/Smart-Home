@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { addCartItem, deleteCartItem, fetchCart } from './operations';
+import { addCartItem, deleteCartItem } from './operations';
 
 export interface CartItem {
   id: number;
@@ -102,16 +102,16 @@ const cartSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-      .addCase(fetchCart.fulfilled, (state, action) => {
-        state.cartItems = action.payload.items;
-        state.totalPrice = state.cartItems.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        );
-      })
-      .addCase(fetchCart.rejected, (state, action) => {
-        state.error = action.error.message;
-      })
+      // .addCase(fetchCart.fulfilled, (state, action) => {
+      //   state.cartItems = action.payload.items;
+      //   state.totalPrice = state.cartItems.reduce(
+      //     (total, item) => total + item.price * item.quantity,
+      //     0
+      //   );
+      // })
+      // .addCase(fetchCart.rejected, (state, action) => {
+      //   state.error = action.error.message;
+      // })
       .addCase(addCartItem.fulfilled, (state, action) => {
         const existingItem = state.cartItems.find(
           item => item.id === action.payload.id
@@ -140,8 +140,7 @@ const cartSlice = createSlice({
         state.error = action.error.message;
       }),
 });
-export const { increaseQuantity, decreaseQuantity } =
-  cartSlice.actions;
+export const { increaseQuantity, decreaseQuantity } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;
 
 export default cartReducer;

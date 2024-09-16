@@ -3,11 +3,10 @@ import { useDispatch } from 'react-redux';
 import leftArrow from '../../../assets/arrowsCard/leftArrow.svg';
 import rightArrow from '../../../assets/arrowsCard/rightArrow.svg';
 import heart from '../../../assets/iconsSmartHome/heart.svg';
-import { Product } from '../../../redux/products/type';
-import styles from './ProductCard.module.scss';
 import { addCartItem } from '../../../redux/cart/operations';
+import { Product } from '../../../redux/products/type';
 import { AppDispatch } from '../../../redux/store';
-import { nanoid } from '@reduxjs/toolkit';
+import styles from './ProductCard.module.scss';
 
 interface ProductCardProps {
   product: Product;
@@ -49,27 +48,23 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     evt.preventDefault();
     evt.stopPropagation();
 
-    const cartId = nanoid();
+    // const cartData = {
+    //   id: 'cartId123', // Use a proper cart ID here, for now it's hardcoded
+    //   items: [
+    //     {
+    //       productId: productId,
+    //       productName: productName,
+    //       price: productPrice,
+    //       quantity: 1,
+    //       pictureUrl: images[0].imageUrl,
+    //     },
+    //   ],
+    // };
 
-    const cartData = {
-      id: cartId,
-      items: [
-        {
-          productId: productId,
-          productName: productName,
-          price: productPrice,
-          quantity: 1,
-          pictureUrl: images[0].imageUrl,
-        },
-      ],
-      deliveryMethodId: 0,
-      clientSecret: '',
-      paymentIntentId: '',
-    };
+    // TODO: //if created or existing product  get or post!  if existing product, you should create body request  with POST
 
-    dispatch(addCartItem(cartData));
+    dispatch(addCartItem({ productId }));
   };
-
 
   return (
     <div className={styles.card}>
