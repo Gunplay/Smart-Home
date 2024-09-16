@@ -17,7 +17,22 @@ export const fetchCart = createAsyncThunk(
 
 export const addCartItem = createAsyncThunk(
   'cart/addCartItem',
-  async (cartData: { id: string; items: Array<{ productId: number; productName: string; price: number; quantity: number; pictureUrl: string; }>; deliveryMethodId: number; clientSecret: string; paymentIntentId: string }, thunkAPI) => {
+  async (
+    cartData: {
+      id: string;
+      items: Array<{
+        productId: number;
+        productName: string;
+        price: number;
+        quantity: number;
+        pictureUrl: string;
+      }>;
+      deliveryMethodId: number;
+      clientSecret: string;
+      paymentIntentId: string;
+    },
+    thunkAPI
+  ) => {
     try {
       const response = await axios.post(shoppingCartUrl, cartData);
       return response.data;
@@ -26,7 +41,6 @@ export const addCartItem = createAsyncThunk(
     }
   }
 );
-
 
 export const deleteCartItem = createAsyncThunk(
   'cart/deleteCartItem',

@@ -7,7 +7,7 @@ import { Product } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
 import { addCartItem } from '../../../redux/cart/operations';
 import { AppDispatch } from '../../../redux/store';
-import { nanoid } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 
 interface ProductCardProps {
   product: Product;
@@ -32,6 +32,18 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   } = product;
 
   const dispatch: AppDispatch = useDispatch();
+  const getCartId = ():string => {
+    const storedCartId = localStorage.getItem('cartId');
+    if (storedCartId) {
+      return storedCartId;
+    }
+    const newCartId = nanoid();
+    localStorage.setItem('cartId', newCartId);
+    // console.log(newCartId);
+    return newCartId;
+  };
+
+  const currentCartId = getCartId();
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -49,10 +61,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     evt.preventDefault();
     evt.stopPropagation();
 
-    const cartId = nanoid();
-
     const cartData = {
-      id: cartId,
+      id: currentCartId,
       items: [
         {
           productId: productId,
@@ -66,10 +76,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       clientSecret: '',
       paymentIntentId: '',
     };
-
+    console.log('Cart Data', cartData);
     dispatch(addCartItem(cartData));
   };
-
 
   return (
     <div className={styles.card}>
@@ -116,7 +125,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.newPrice}>{productPrice}</span>
         </div>
       </div>
-      <button onClick={handleAddToCart} className={styles.button}>
+      <button onClick={ handleAddToCart} className={styles.button}>
         До кошика
       </button>
     </div>
