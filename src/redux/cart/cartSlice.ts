@@ -102,7 +102,6 @@ const cartSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-
       .addCase(fetchCart.fulfilled, (state, action) => {
         state.items = action.payload.items;
         state.totalPrice = state.items.reduce(
@@ -113,18 +112,6 @@ const cartSlice = createSlice({
       .addCase(fetchCart.rejected, (state, action) => {
         state.error = action.error.message;
       })
-
-      // .addCase(fetchCart.fulfilled, (state, action) => {
-      //   state.cartItems = action.payload.items;
-      //   state.totalPrice = state.cartItems.reduce(
-      //     (total, item) => total + item.price * item.quantity,
-      //     0
-      //   );
-      // })
-      // .addCase(fetchCart.rejected, (state, action) => {
-      //   state.error = action.error.message;
-      // })
-
       .addCase(addCartItem.fulfilled, (state, action) => {
         console.log('action.payload', action.payload);
         const existingItem = state.items.find(
