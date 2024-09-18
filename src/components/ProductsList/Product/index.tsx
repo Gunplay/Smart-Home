@@ -7,7 +7,8 @@ import { Product } from '../../../redux/products/type';
 import styles from './ProductCard.module.scss';
 import { addCartItem } from '../../../redux/cart/operations';
 import { AppDispatch } from '../../../redux/store';
-import { nanoid } from 'nanoid';
+import {        createUpdateCartId } from '../../../redux/cart/cartSlice.ts';
+import { useGetCartId } from '../../../hooks/useGetCartId.ts';
 
 interface ProductCardProps {
   product: Product;
@@ -32,18 +33,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   } = product;
 
   const dispatch: AppDispatch = useDispatch();
-  const getCartId = ():string => {
-    const storedCartId = localStorage.getItem('cartId');
-    if (storedCartId) {
-      return storedCartId;
-    }
-    const newCartId = nanoid();
-    localStorage.setItem('cartId', newCartId);
-    // console.log(newCartId);
-    return newCartId;
-  };
 
-  const currentCartId = getCartId();
+  const cartId = useGetCartId();
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -61,8 +52,10 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     evt.preventDefault();
     evt.stopPropagation();
 
+    dispatch(createUpdateCartId(cartId))
+
     const cartData = {
-      id: currentCartId,
+      id: cartId,
       items: [
         {
           productId: productId,
@@ -76,7 +69,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       clientSecret: '',
       paymentIntentId: '',
     };
+
     console.log('Cart Data', cartData);
+
     dispatch(addCartItem(cartData));
   };
 

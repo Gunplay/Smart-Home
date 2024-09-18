@@ -47,7 +47,7 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
                 <div key={item.id} className={styles.cartItem}>
                   <div className={styles.itemWrap}>
                     <img
-                      src={item.imageURL}
+                      src={item.pictureUrl}
                       alt={item.name}
                       className={styles.itemImage}
                     />

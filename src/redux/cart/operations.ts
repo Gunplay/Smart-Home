@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { CartData } from '../../types/cart.types.ts';
 
 const shoppingCartUrl = 'https://dev.smarthome-team.store/api/ShoppingCart/';
 
@@ -15,22 +16,12 @@ export const fetchCart = createAsyncThunk(
   }
 );
 
+
+
 export const addCartItem = createAsyncThunk(
   'cart/addCartItem',
   async (
-    cartData: {
-      id: string;
-      items: Array<{
-        productId: number;
-        productName: string;
-        price: number;
-        quantity: number;
-        pictureUrl: string;
-      }>;
-      deliveryMethodId: number;
-      clientSecret: string;
-      paymentIntentId: string;
-    },
+    cartData: CartData,
     thunkAPI
   ) => {
     try {
