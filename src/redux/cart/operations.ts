@@ -25,7 +25,7 @@ export const addCartItem = createAsyncThunk(
       const response = await axios.get(`${shoppingCartUrl}?id=${productId}`);
 
       return response.data.data; // Extracting 'data' from the response
-    } catch (error: any) {
+    } catch (error: string | any) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -37,7 +37,7 @@ export const deleteCartItem = createAsyncThunk(
     try {
       await axios.delete(`${shoppingCartUrl}${itemId}`);
       return itemId;
-    } catch (error: any) {
+    } catch (error: string | any) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
