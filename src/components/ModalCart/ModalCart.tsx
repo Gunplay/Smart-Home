@@ -19,7 +19,7 @@ interface ModalProps {
 
 const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
   const dispatch: AppDispatch = useDispatch();
-  const { totalPrice, cartItems } = useSelector(
+  const { totalPrice, items } = useSelector(
     (state: RootState) => state.cart
   );
   console.log('state.cart', cartItems);
@@ -40,10 +40,10 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
             <FontAwesomeIcon icon={faXmark} className={styles.closeIcon} />
           </button>
         </div>
-        {cartItems.length ? (
+        {items.length ? (
           <>
             <div className={styles.cartItems}>
-              {cartItems.map(item => (
+              {items.map(item => (
                 <div key={item.id} className={styles.cartItem}>
                   <div className={styles.itemWrap}>
                     <img

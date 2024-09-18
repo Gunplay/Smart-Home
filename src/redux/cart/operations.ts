@@ -16,7 +16,26 @@ const shoppingCartUrl = 'https://dev.smarthome-team.store/api/ShoppingCart/';
 // );
 export const addCartItem = createAsyncThunk(
   'cart/addCartItem',
+
+  async (
+    cartData: {
+      id: string;
+      items: Array<{
+        productId: number;
+        productName: string;
+        price: number;
+        quantity: number;
+        pictureUrl: string;
+      }>;
+      deliveryMethodId: number;
+      clientSecret: string;
+      paymentIntentId: string;
+    },
+    thunkAPI
+  ) => {
+
   async ({ productId }: { productId: number }, thunkAPI) => {
+
     try {
       // First, send cartData to the server (you may use POST or PUT here based on your API)
       // await axios.get(`http://dev.smarthome-team.store/api/ShoppingCart`);
