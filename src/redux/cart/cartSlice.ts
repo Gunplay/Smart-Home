@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { addCartItem, deleteCartItem } from './operations';
+import { addCartItem, deleteCartItem, fetchCart } from './operations';
 
 export interface CartItem {
   id: number;

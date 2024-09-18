@@ -3,17 +3,17 @@ import axios from 'axios';
 
 const shoppingCartUrl = 'https://dev.smarthome-team.store/api/ShoppingCart/';
 
-// export const fetchCart = createAsyncThunk(
-//   'cart/fetchCartItems',
-//   async (cartId: any, thunkAPI) => {
-//     try {
-//       const response = await axios.get(`${shoppingCartUrl}${cartId}`, cartId);
-//       return response.data;
-//     } catch (error: any) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const fetchCart = createAsyncThunk(
+  'cart/fetchCartItems',
+  async (cartId: any, thunkAPI) => {
+    try {
+      const response = await axios.get(`${shoppingCartUrl}${cartId}`, cartId);
+      return response.data;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 export const addCartItem = createAsyncThunk(
   'cart/addCartItem',
 
