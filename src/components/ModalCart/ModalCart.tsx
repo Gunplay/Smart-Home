@@ -1,16 +1,16 @@
 import { faMinus, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HiOutlineTrash } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   decreaseQuantity,
   increaseQuantity,
 } from '../../redux/cart/cartSlice.ts';
-import { AppDispatch, RootState } from '../../redux/store';
-import styles from './ModalCart.module.scss';
-import EmptyCart from './EmptyCart.tsx';
-import { AdditionalOptions } from './AdditionalOptions.tsx';
-import { HiOutlineTrash } from 'react-icons/hi';
 import { deleteCartItem } from '../../redux/cart/operations.ts';
+import { AppDispatch, RootState } from '../../redux/store';
+import { AdditionalOptions } from './AdditionalOptions.tsx';
+import EmptyCart from './EmptyCart.tsx';
+import styles from './ModalCart.module.scss';
 
 interface ModalProps {
   openCart: boolean;
@@ -22,14 +22,12 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
   const { totalPrice, items } = useSelector(
     (state: RootState) => state.cart
   );
+  console.log('state.cart', cartItems);
 
+  // useEffect(() => {
 
-// useEffect(() => {
- 
-
-//   console.log(totalPrice, cartItems);
-// }, [dispatch]);
-
+  //   console.log(totalPrice, cartItems);
+  // }, [dispatch]);
 
   if (!openCart) return null;
 
