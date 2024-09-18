@@ -34,7 +34,7 @@ export const addCartItem = createAsyncThunk(
     thunkAPI
   ) => {
 
-  async ({ productId }: { productId: number }, thunkAPI) => {
+  async ({ productId }: { productId: number }, thunkAPI: { rejectWithValue: (arg0: any) => any }) => {
 
     try {
       // First, send cartData to the server (you may use POST or PUT here based on your API)
