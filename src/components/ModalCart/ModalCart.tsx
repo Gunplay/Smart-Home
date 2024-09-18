@@ -22,7 +22,7 @@ const ModalCart: React.FC<ModalProps> = ({ openCart, onClose }) => {
   const { totalPrice, items } = useSelector(
     (state: RootState) => state.cart
   );
-  console.log('state.cart', cartItems);
+  console.log('state.cart', items);
 
   // useEffect(() => {
 
