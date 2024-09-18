@@ -6,7 +6,11 @@ import heart from '../../../assets/iconsSmartHome/heart.svg';
 import { addCartItem } from '../../../redux/cart/operations';
 import { Product } from '../../../redux/products/type';
 import { AppDispatch } from '../../../redux/store';
+
+import { nanoid } from 'nanoid';
+
 import styles from './ProductCard.module.scss';
+
 
 interface ProductCardProps {
   product: Product;
@@ -31,6 +35,18 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   } = product;
 
   const dispatch: AppDispatch = useDispatch();
+  const getCartId = ():string => {
+    const storedCartId = localStorage.getItem('cartId');
+    if (storedCartId) {
+      return storedCartId;
+    }
+    const newCartId = nanoid();
+    localStorage.setItem('cartId', newCartId);
+    // console.log(newCartId);
+    return newCartId;
+  };
+
+  const currentCartId = getCartId();
 
   //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -48,6 +64,24 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     evt.preventDefault();
     evt.stopPropagation();
 
+
+    const cartData = {
+      id: currentCartId,
+      items: [
+        {
+          productId: productId,
+          productName: productName,
+          price: productPrice,
+          quantity: 1,
+          pictureUrl: images[0].imageUrl,
+        },
+      ],
+      deliveryMethodId: 0,
+      clientSecret: '',
+      paymentIntentId: '',
+    };
+    console.log('Cart Data', cartData);
+    dispatch(addCartItem(cartData));
     // const cartData = {
     //   id: 'cartId123', // Use a proper cart ID here, for now it's hardcoded
     //   items: [
@@ -111,7 +145,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <span className={styles.newPrice}>{productPrice}</span>
         </div>
       </div>
-      <button onClick={handleAddToCart} className={styles.button}>
+      <button onClick={ handleAddToCart} className={styles.button}>
         До кошика
       </button>
     </div>

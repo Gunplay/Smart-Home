@@ -11,13 +11,15 @@ export interface CartItem {
 
 interface CartState {
   totalPrice: number;
-  cartItems: CartItem[];
+  cartId: string;
+  items: CartItem[];
   error: any;
 }
 
 const initialState: CartState = {
   totalPrice: 0,
-  cartItems: [],
+  cartId: '',
+  items: [],
   error: null,
 };
 
@@ -81,27 +83,37 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     increaseQuantity(state, action: PayloadAction<number>) {
-      const item = state.cartItems.find(item => item.id === action.payload);
+      const item = state.items.find(item => item.id === action.payload);
       if (item) {
         item.quantity += 1;
         state.totalPrice += item.price;
       }
     },
     decreaseQuantity(state, action: PayloadAction<number>) {
-      const item = state.cartItems.find(item => item.id === action.payload);
+      const item = state.items.find(item => item.id === action.payload);
       if (item && item.quantity > 1) {
         item.quantity -= 1;
         state.totalPrice -= item.price;
       } else if (item?.quantity === 1) {
         state.totalPrice -= item.price;
-        state.cartItems = state.cartItems.filter(
-          cartItem => cartItem.id !== item.id
-        );
+        state.items = state.items.filter(cartItem => cartItem.id !== item.id);
       }
     },
   },
   extraReducers: builder =>
     builder
+
+      .addCase(fetchCart.fulfilled, (state, action) => {
+        state.items = action.payload.items;
+        state.totalPrice = state.items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
+      })
+      .addCase(fetchCart.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+
       // .addCase(fetchCart.fulfilled, (state, action) => {
       //   state.cartItems = action.payload.items;
       //   state.totalPrice = state.cartItems.reduce(
@@ -112,28 +124,32 @@ const cartSlice = createSlice({
       // .addCase(fetchCart.rejected, (state, action) => {
       //   state.error = action.error.message;
       // })
+
       .addCase(addCartItem.fulfilled, (state, action) => {
-        const existingItem = state.cartItems.find(
+        console.log('action.payload', action.payload);
+        const existingItem = state.items.find(
           item => item.id === action.payload.id
         );
-        existingItem
-          ? (existingItem.quantity += action.payload.quantity)
-          : state.cartItems.push(action.payload);
+
+        if (existingItem) {
+          existingItem.quantity += action.payload.quantity;
+        } else {
+          state.items.push(action.payload);
+        }
 
         state.totalPrice += action.payload.price * action.payload.quantity;
+        console.log('Cart Items:', state.items);
       })
       .addCase(addCartItem.rejected, (state, action) => {
         state.error = action.error.message;
       })
       .addCase(deleteCartItem.fulfilled, (state, action) => {
-        const itemToDelete = state.cartItems.find(
+        const itemToDelete = state.items.find(
           item => item.id === action.payload
         );
         if (itemToDelete) {
           state.totalPrice -= itemToDelete.price * itemToDelete.quantity;
-          state.cartItems = state.cartItems.filter(
-            item => item.id !== action.payload
-          );
+          state.items = state.items.filter(item => item.id !== action.payload);
         }
       })
       .addCase(deleteCartItem.rejected, (state, action) => {

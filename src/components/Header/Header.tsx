@@ -15,7 +15,7 @@ import { RootState } from '../../redux/store';
 const Header: React.FC = () => {
   const [openCart, setOpenCart] = useState(false);
   const handleOpen = () => setOpenCart(!openCart);
-  const { cartItems } = useSelector((state: RootState) => state.cart);
+  const { items } = useSelector((state: RootState) => state.cart);
 
   useEffect(() => {
     openCart
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
           <div className={styles.icon} onClick={handleOpen}>
             <div className={styles.iconBox}>
               <div className={styles.cartItemCounter}>
-                <span className={styles.counterValue}>{cartItems.length}</span>
+                <span className={styles.counterValue}>{items.length}</span>
               </div>
               <svg
                 width="24"
